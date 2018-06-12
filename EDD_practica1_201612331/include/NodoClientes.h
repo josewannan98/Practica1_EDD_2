@@ -1,7 +1,10 @@
 #ifndef NODOCLIENTES_H
 #define NODOCLIENTES_H
+#include <stdio.h>
+#include <iostream>
+#include <string>
 
-
+using namespace std;
 class NodoClientes
 {
     public:
@@ -18,6 +21,7 @@ class NodoClientes
         string ubicacion;
 
         NodoClientes *siguiente;
+        NodoClientes *antetior;
 
 
     protected:
@@ -26,7 +30,7 @@ class NodoClientes
         bool tiene_boleto = false;
         bool esta_enatencion = false;
         bool esta_enseguridad = false;
-        bool
+
 };
 
 #endif // NODOCLIENTES_H

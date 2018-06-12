@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1528780833 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/main.cpp
+	<iostream>
+	"ListaClientes.h"
+	<stdio.h>
+
+1528781110 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/ListaClientes.cpp
+	"ListaClientes.h"
+	"NodoClientes.h"
+
+1528780861 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/ListaClientes.h
+	<iostream>
+	<string>
+	<stdio.h>
+	"NodoClientes.h"
+
+1528777621 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/NodoClientes.cpp
+	"NodoClientes.h"
+
+1528779590 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/NodoClientes.h
+	<stdio.h>
+	<iostream>
+	<string>
+
