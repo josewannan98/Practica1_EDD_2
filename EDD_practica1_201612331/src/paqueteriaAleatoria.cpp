@@ -34,17 +34,19 @@ NodoPaqueteria* paqueteriaAleatoria::crearpaquete(int id_)
     {
         tipo_ = "Paqueteria Comercial";
     }
+    int etrando = 0;
 
     if(entra_!= 1)
     {
         informacion_ = "Paquete Entrando -> Ingreso por Hangares";
+        etrando = 1;
     }
     else
     {
         informacion_ = "Paquete Saliendo -> Esperando Ingreso al Hangar";
     }
 
-    NodoPaqueteria *paqueteria = new NodoPaqueteria(nombre_, tipo_, ubicacion_, informacion_);
+    NodoPaqueteria *paqueteria = new NodoPaqueteria(nombre_, tipo_, ubicacion_, informacion_, etrando);
 
 
     //se retorna el valor

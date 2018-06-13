@@ -15,6 +15,7 @@ class ListaEmpleados
 
         void ingresar_datos(NodoEmpleados *empleado);
         void mostrar_datos();
+        void mostrar_unidad(NodoEmpleados *empleado);
 
     protected:
 

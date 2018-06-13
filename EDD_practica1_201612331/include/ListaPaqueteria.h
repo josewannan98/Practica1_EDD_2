@@ -17,6 +17,7 @@ class ListaPaqueteria
 
         void ingresar_dato(NodoPaqueteria *paqueteria);
         void Mostrar_datos();
+        void Mostrar_unidad(NodoPaqueteria *paqueterio);
 
     protected:
 

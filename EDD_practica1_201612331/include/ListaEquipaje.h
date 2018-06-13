@@ -15,6 +15,7 @@ class ListaEquipaje
 
         void agregar_datos(NodoEquipaje *novo);
         void mostrar_datos();
+        void mostrar_unidad(NodoEquipaje *nodo);
 
     protected:
 

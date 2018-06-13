@@ -38,9 +38,18 @@ NodoEquipaje *pivote = this->primero;
     {
 
          cout<<"---------------------------------------------------"<<endl;
-         cout<<" | "<<pivote->id<<" -  Nombre: "<<pivote->nombre<<"  \n | "<<pivote->id<<" -  Edad: "<< pivote->edad<<"  \n | "<<pivote->id<<" -  Genero: "<<pivote->genero<<"  \n | "<<pivote->id<<" -  Tipo de Cliente: "<<pivote->tipo_cliente<<" \n | "<<pivote->id<<" -  Estado: "<<pivote->estado<<endl;
+         cout<<" | "<<pivote->id<<" -  Nombre: "<<pivote->nombre<<"  \n | "<<pivote->id<<" -  Tipo de Equipaje: "<< pivote->tipo<<"  \n | "<<pivote->id<<" -  informacion: "<<pivote->informacion<<endl;
          cout<<"---------------------------------------------------"<<endl;
          pivote = pivote->siguiente;
 
     }
+}
+void ListaEquipaje::mostrar_unidad(NodoEquipaje *nodo)
+{
+
+    NodoEquipaje *pivote = nodo;
+
+         cout<<"---------------------------------------------------"<<endl;
+         cout<<" | "<<pivote->id<<" -  Nombre: "<<pivote->nombre<<"  \n | "<<pivote->id<<" -  Tipo de Equipaje: "<< pivote->tipo<<"  \n | "<<pivote->id<<" -  informacion: "<<pivote->informacion<<endl;
+         cout<<"---------------------------------------------------"<<endl;
 }

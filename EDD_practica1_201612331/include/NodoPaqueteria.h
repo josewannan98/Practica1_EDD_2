@@ -10,7 +10,7 @@ class NodoPaqueteria
 {
     public:
         NodoPaqueteria();
-        NodoPaqueteria(string nombre, string tipo, string ubicacion, string informacion);
+        NodoPaqueteria(string nombre, string tipo, string ubicacion, string informacion, int entrandos);
         virtual ~NodoPaqueteria();
 
         int id;
@@ -25,6 +25,7 @@ class NodoPaqueteria
 
 
          bool esta_enrevision = false;
+         bool entrando = false;
 
     protected:
 

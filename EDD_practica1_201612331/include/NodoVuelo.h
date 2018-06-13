@@ -17,6 +17,7 @@ class NodoVuelo
 
         int id;
         string nombre;
+        string informacion;
         ListaClientes *clientes_envuelo;
         ListaPaqueteria *paqueteria_envuelo;
         ListaEquipaje *equipaje_envuelo;

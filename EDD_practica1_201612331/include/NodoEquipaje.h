@@ -10,7 +10,7 @@ class NodoEquipaje
     public:
         NodoEquipaje();
 
-        NodoEquipaje(string nombre, string tipo, string ubicacion, string informacion);
+        NodoEquipaje(string nombre, string tipo, string ubicacion, string informacion, int entrandos);
         virtual ~NodoEquipaje();
 
          int id;
@@ -25,6 +25,7 @@ class NodoEquipaje
 
 
          bool esta_enrevision = false;
+         bool entrando = false;
 
 
     protected:

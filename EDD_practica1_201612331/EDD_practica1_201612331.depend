@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1528871835 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/main.cpp
+1528927164 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/main.cpp
 	<iostream>
 	<stdio.h>
 	"ListaClientes.h"
@@ -17,12 +17,14 @@
 	"empleadosAleatorios.h"
 	"NodoEmpleados.h"
 	"ListaEmpleados.h"
+	"ListaEstaciones.h"
+	"NodoEstacion.h"
 
-1528871835 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/ListaClientes.cpp
+1528926607 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/ListaClientes.cpp
 	"ListaClientes.h"
 	"NodoClientes.h"
 
-1528852325 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/ListaClientes.h
+1528926567 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/ListaClientes.h
 	<iostream>
 	<string>
 	<stdio.h>
@@ -46,49 +48,49 @@
 	<iostream>
 	"NodoClientes.h"
 
-1528850945 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/NodoEquipaje.cpp
+1528922766 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/NodoEquipaje.cpp
 	"NodoEquipaje.h"
 
-1528851177 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/NodoEquipaje.h
+1528922781 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/NodoEquipaje.h
 	"NodoClientes.h"
 	<iostream>
 
-1528851614 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/ListaEquipaje.h
+1528926653 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/ListaEquipaje.h
 	"NodoEquipaje.h"
 
 1528851787 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/equipajeAleatorio.h
 	"NodoEquipaje.h"
 
-1528865836 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/equipajeAleatorio.cpp
+1528922912 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/equipajeAleatorio.cpp
 	"equipajeAleatorio.h"
 	"NodoEquipaje.h"
 	<stdlib.h>
 	<time.h>
 	<iostream>
 
-1528851851 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/ListaEquipaje.cpp
+1528926698 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/ListaEquipaje.cpp
 	"ListaEquipaje.h"
 
-1528858609 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/ListaPaqueteria.h
+1528926751 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/ListaPaqueteria.h
 	"NodoPaqueteria.h"
 
-1528857983 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/NodoPaqueteria.h
+1528922818 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/NodoPaqueteria.h
 	"NodoEquipaje.h"
 	<iostream>
 
 1528860401 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/paqueteriaAleatoria.h
 	"NodoPaqueteria.h"
 
-1528860527 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/ListaPaqueteria.cpp
+1528926812 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/ListaPaqueteria.cpp
 	"ListaPaqueteria.h"
 
-1528858132 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/NodoPaqueteria.cpp
+1528922806 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/NodoPaqueteria.cpp
 	"NodoPaqueteria.h"
 
-1528864039 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/ListaVuelo.h
+1528926734 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/ListaVuelo.h
 	"NodoVuelo.h"
 
-1528865201 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/NodoVuelo.h
+1528923360 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/NodoVuelo.h
 	"ListaClientes.h"
 	"ListaPaqueteria.h"
 	"ListaEquipaje.h"
@@ -96,16 +98,16 @@
 1528864530 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/vuelosAleatorios.h
 	"NodoVuelo.h"
 
-1528865400 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/ListaVuelo.cpp
+1528926855 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/ListaVuelo.cpp
 	"ListaVuelo.h"
 	"NodoVuelo.h"
 	<iostream>
 	<string>
 
-1528865223 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/NodoVuelo.cpp
+1528923434 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/NodoVuelo.cpp
 	"NodoVuelo.h"
 
-1528865870 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/paqueteriaAleatoria.cpp
+1528922866 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/paqueteriaAleatoria.cpp
 	"paqueteriaAleatoria.h"
 	"NodoPaqueteria.h"
 
@@ -124,7 +126,7 @@
 	<string>
 	<stdio.h>
 
-1528869875 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/ListaEmpleados.h
+1528926481 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/ListaEmpleados.h
 	"NodoEmpleados.h"
 
 1528870180 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/empleadosAleatorios.cpp
@@ -134,7 +136,7 @@
 	<time.h>
 	<iostream>
 
-1528869101 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/ListaEmpleados.cpp
+1528927188 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/ListaEmpleados.cpp
 	"ListaEmpleados.h"
 
 1528870078 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/NodoEmpleados.cpp
@@ -145,10 +147,16 @@
 
 1528871361 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/ListaAtencion.h
 
-1528870391 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/NodoEstacion.cpp
+1528925876 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/NodoEstacion.cpp
 	"NodoEstacion.h"
 
-1528871640 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/NodoEstacion.h
+1528924198 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/NodoEstacion.h
 	"NodoEmpleados.h"
 	"ListaClientes.h"
+
+1528925815 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/ListaEstaciones.h
+	"NodoEstacion.h"
+
+1528926214 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/ListaEstaciones.cpp
+	"ListaEstaciones.h"
 

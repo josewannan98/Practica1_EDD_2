@@ -12,7 +12,7 @@ NodoEquipaje::NodoEquipaje()
     this->ubicacion = "";
     //ctor
 }
-NodoEquipaje::NodoEquipaje(string nombre_, string tipo_, string ubicacion_, string informacion_)
+NodoEquipaje::NodoEquipaje(string nombre_, string tipo_, string ubicacion_, string informacion_, int entrandos)
 {
 
 
@@ -21,6 +21,10 @@ NodoEquipaje::NodoEquipaje(string nombre_, string tipo_, string ubicacion_, stri
     this->nombre = nombre_;
     this->tipo = tipo_;
     this->ubicacion = ubicacion_;
+    if(entrandos==1)
+    {
+        this->entrando= true;
+    }
     //ctor
 }
 

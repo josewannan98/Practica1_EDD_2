@@ -35,14 +35,40 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="include/ClientesAleatorios.h" />
+		<Unit filename="include/ListaAtencion.h" />
 		<Unit filename="include/ListaClientes.h" />
+		<Unit filename="include/ListaEmpleados.h" />
+		<Unit filename="include/ListaEquipaje.h" />
+		<Unit filename="include/ListaPaqueteria.h" />
+		<Unit filename="include/ListaVuelo.h" />
 		<Unit filename="include/NodoClientes.h" />
+		<Unit filename="include/NodoEmpleados.h" />
 		<Unit filename="include/NodoEquipaje.h" />
+		<Unit filename="include/NodoEstacion.h" />
+		<Unit filename="include/NodoPaqueteria.h" />
+		<Unit filename="include/NodoVuelo.h" />
+		<Unit filename="include/empleadosAleatorios.h" />
+		<Unit filename="include/equipajeAleatorio.h" />
+		<Unit filename="include/paqueteriaAleatoria.h" />
+		<Unit filename="include/vuelosAleatorios.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/ClientesAleatorios.cpp" />
+		<Unit filename="src/ListaAtencion.cpp" />
 		<Unit filename="src/ListaClientes.cpp" />
+		<Unit filename="src/ListaEmpleados.cpp" />
+		<Unit filename="src/ListaEquipaje.cpp" />
+		<Unit filename="src/ListaPaqueteria.cpp" />
+		<Unit filename="src/ListaVuelo.cpp" />
 		<Unit filename="src/NodoClientes.cpp" />
+		<Unit filename="src/NodoEmpleados.cpp" />
 		<Unit filename="src/NodoEquipaje.cpp" />
+		<Unit filename="src/NodoEstacion.cpp" />
+		<Unit filename="src/NodoPaqueteria.cpp" />
+		<Unit filename="src/NodoVuelo.cpp" />
+		<Unit filename="src/empleadosAleatorios.cpp" />
+		<Unit filename="src/equipajeAleatorio.cpp" />
+		<Unit filename="src/paqueteriaAleatoria.cpp" />
+		<Unit filename="src/vuelosAleatorios.cpp" />
 		<Extensions>
 			<envvars />
 			<code_completion />
