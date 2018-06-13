@@ -34,11 +34,15 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/ClientesAleatorios.h" />
 		<Unit filename="include/ListaClientes.h" />
 		<Unit filename="include/NodoClientes.h" />
+		<Unit filename="include/NodoEquipaje.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/ClientesAleatorios.cpp" />
 		<Unit filename="src/ListaClientes.cpp" />
 		<Unit filename="src/NodoClientes.cpp" />
+		<Unit filename="src/NodoEquipaje.cpp" />
 		<Extensions>
 			<envvars />
 			<code_completion />
