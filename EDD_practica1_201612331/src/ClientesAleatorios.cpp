@@ -1,5 +1,5 @@
 #include "ClientesAleatorios.h"
-#include "ListaClientes.h"
+
 #include <stdlib.h>
 #include <time.h>
 #include <iostream>
@@ -20,12 +20,18 @@ ClientesAleatorios::~ClientesAleatorios()
 NodoClientes* ClientesAleatorios::crearclientes(int id_)
 {
 
+        //en esta parte del codigo se crea el random con los que trabajaremos las condicionales de
+        //personalidad[atributos] del Nodo
+
         int edad = 1 + rand() % (91-1);
         int tipo = 1 + rand() % (3-0);
         int conboleto = 0 + rand() % (2-0);
         int genero = 0 + rand() % (2-0);
         int discapacidad = 0 + rand() % (2-0);
         int embarazada = 0 + rand() % (2-0);
+
+        //Inicializamos la informacion puede iniciarse con cualquier valor incluso vacio pero si se inicializa vacio se pierde la info
+        //preferiblemente iniciar con alguna cadena cualquiera
 
         string nombre_ = "sin informacion";
         string tipo_cliente_ = "sin informacion";
@@ -36,6 +42,9 @@ NodoClientes* ClientesAleatorios::crearclientes(int id_)
         string ubicacion_ = "sin informacion";
         int id = id_;
 
+        //se inicializan las condicionales con las que usamos los random
+
+        //iniciamos con edad
 
         if(edad > 18 || edad == 18)
         {
@@ -43,6 +52,8 @@ NodoClientes* ClientesAleatorios::crearclientes(int id_)
             if(edad>75)
             {
 
+
+            //si esta discapacitado cambia su estado
                 if(discapacidad == 1)
                 {
                     estado_ = "Persona Discapacitada";
@@ -56,6 +67,9 @@ NodoClientes* ClientesAleatorios::crearclientes(int id_)
             else
             {
 
+            //si no es mayor a 75 se imagina es nicamente mayor de edad
+
+            //si es discapacitada se cambia el estado
                 if(discapacidad==1)
                 {
                     estado_ = "Persona Discapacitada";
@@ -70,6 +84,10 @@ NodoClientes* ClientesAleatorios::crearclientes(int id_)
         else
         {
                 edad_ = edad;
+
+                // si es menor de edad
+
+                //si esta discapacitado
                 if(discapacidad==1)
                 {
                     estado_ = "Persona Discapacitada";
@@ -80,6 +98,8 @@ NodoClientes* ClientesAleatorios::crearclientes(int id_)
                     estado_ = "Persona Menor de Edad";
                 }
         }
+
+        //seteas los tipos de clientes conforme a tu random
 
         if(tipo == 1)
         {
@@ -97,6 +117,8 @@ NodoClientes* ClientesAleatorios::crearclientes(int id_)
         nombre_ = "Cliente_" + to_string(id);
 
 
+        //seteas su genero de acuerdo al randmon
+
         if(genero == 1)
         {
             genero_ = "Mujer";
@@ -104,17 +126,22 @@ NodoClientes* ClientesAleatorios::crearclientes(int id_)
             {
                 estado_ = "Mujer Embarazada";
             }
+
+
         }
         else
         {
             genero_ = "Hombre";
         }
 
+        //se crean el Nodo a agregar al cliente se envia el int boleto para reconstruir si posee boleto
+
         NodoClientes *clientesAleas = new NodoClientes(nombre_, tipo_cliente_, estado_, edad_, informacion_, ubicacion_, genero_, conboleto);
 
 
 
 
+//se retorna los nodos
 
 return clientesAleas;
 }

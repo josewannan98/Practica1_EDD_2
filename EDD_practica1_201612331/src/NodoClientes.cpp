@@ -13,6 +13,7 @@ NodoClientes::NodoClientes()
     this->siguiente = nullptr;
     this->antetior = nullptr;
 }
+//se crea un constructor normal
 NodoClientes::NodoClientes(string nombre_, string tipo_cliente_, string estado_, int edad_, string informacion_, string ubicacion_, string genero_)
 {
     this->nombre = nombre_;
@@ -25,6 +26,7 @@ NodoClientes::NodoClientes(string nombre_, string tipo_cliente_, string estado_,
 
 
 }
+//constructor para setear si posee boleto
 NodoClientes::NodoClientes(string nombre_, string tipo_cliente_, string estado_, int edad_, string informacion_, string ubicacion_, string genero_, int conboleto)
 {
     this->nombre = nombre_;

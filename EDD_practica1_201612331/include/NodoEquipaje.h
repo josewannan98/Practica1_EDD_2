@@ -9,15 +9,22 @@ class NodoEquipaje
 {
     public:
         NodoEquipaje();
-        NodoEquipaje(string nombre, string tipo, string ubicacion);
+
+        NodoEquipaje(string nombre, string tipo, string ubicacion, string informacion);
         virtual ~NodoEquipaje();
 
          int id;
 
          string nombre;
-         string tipo;
-
+         string tipo;//randomizando
+         string informacion;
          string ubicacion;
+
+         NodoEquipaje *anterior;
+         NodoEquipaje *siguiente;
+
+
+         bool esta_enrevision = false;
 
 
     protected:

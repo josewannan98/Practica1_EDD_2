@@ -32,6 +32,7 @@ void ListaClientes::insertar_dato(string nombre, string tipo_cliente, string est
 
     }
 }
+//para agregar en vbase se recibe un nodo
 void ListaClientes::insertar_datos(NodoClientes *Nuevo)
 {
     NodoClientes *nuevo = Nuevo;

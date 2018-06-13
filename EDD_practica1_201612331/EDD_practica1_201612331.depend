@@ -1,9 +1,13 @@
 # depslib dependency file v1.0
-1528847899 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/main.cpp
+1528851748 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/main.cpp
 	<iostream>
 	"ListaClientes.h"
 	<stdio.h>
 	"ClientesAleatorios.h"
+	"ListaEquipaje.h"
+	"NodoClientes.h"
+	"NodoEquipaje.h"
+	"equipajeAleatorio.h"
 
 1528847835 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/ListaClientes.cpp
 	"ListaClientes.h"
@@ -23,12 +27,11 @@
 	<iostream>
 	<string>
 
-1528847490 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/ClientesAleatorios.h
+1528850669 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/ClientesAleatorios.h
 	"NodoClientes.h"
 
-1528847595 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/ClientesAleatorios.cpp
+1528850754 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/ClientesAleatorios.cpp
 	"ClientesAleatorios.h"
-	"ListaClientes.h"
 	<stdlib.h>
 	<time.h>
 	<iostream>
@@ -37,7 +40,20 @@
 1528787881 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/NodoEquipaje.cpp
 	"NodoEquipaje.h"
 
-1528788831 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/NodoEquipaje.h
+1528851177 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/NodoEquipaje.h
 	"NodoClientes.h"
+	<iostream>
+
+1528851614 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/ListaEquipaje.h
+	"NodoEquipaje.h"
+
+1528851787 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/equipajeAleatorio.h
+	"NodoEquipaje.h"
+
+1528851385 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/equipajeAleatorio.cpp
+	"equipajeAleatorio.h"
+	"NodoEquipaje.h"
+	<stdlib.h>
+	<time.h>
 	<iostream>
 

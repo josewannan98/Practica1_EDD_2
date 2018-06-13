@@ -12,6 +12,7 @@ class ClientesAleatorios
 
         NodoClientes* crearclientes(int id);
 
+
     protected:
 
     private:
