@@ -41,6 +41,7 @@ NodoClientes* ClientesAleatorios::crearclientes(int id_)
         string genero_ = "sin informacion";
         string ubicacion_ = "sin informacion";
         int id = id_;
+        int estado_o = 0;
 
         //se inicializan las condicionales con las que usamos los random
 
@@ -57,11 +58,13 @@ NodoClientes* ClientesAleatorios::crearclientes(int id_)
                 if(discapacidad == 1)
                 {
                     estado_ = "Persona Discapacitada";
+                    estado_o = 1;
 
                 }
                 else
                 {
                     estado_ = "Persona de la Tercera Edad";
+                    estado_o = 2;
                 }
             }
             else
@@ -72,11 +75,13 @@ NodoClientes* ClientesAleatorios::crearclientes(int id_)
             //si es discapacitada se cambia el estado
                 if(discapacidad==1)
                 {
+                    estado_o = 1;
                     estado_ = "Persona Discapacitada";
 
                 }
                 else
                 {
+                    estado_o = 4;
                     estado_ = "Persona Mayor de Edad";
                 }
             }
@@ -91,11 +96,13 @@ NodoClientes* ClientesAleatorios::crearclientes(int id_)
                 if(discapacidad==1)
                 {
                     estado_ = "Persona Discapacitada";
+                    estado_o = 1;
 
                 }
                 else
                 {
                     estado_ = "Persona Menor de Edad";
+                    estado_o = 5;
                 }
         }
 
@@ -125,6 +132,7 @@ NodoClientes* ClientesAleatorios::crearclientes(int id_)
             if(embarazada == 1 && discapacidad != 1)
             {
                 estado_ = "Mujer Embarazada";
+                estado_o = 3;
             }
 
 
@@ -136,7 +144,7 @@ NodoClientes* ClientesAleatorios::crearclientes(int id_)
 
         //se crean el Nodo a agregar al cliente se envia el int boleto para reconstruir si posee boleto
 
-        NodoClientes *clientesAleas = new NodoClientes(nombre_, tipo_cliente_, estado_, edad_, informacion_, ubicacion_, genero_, conboleto);
+        NodoClientes *clientesAleas = new NodoClientes(nombre_, tipo_cliente_, estado_, edad_, informacion_, ubicacion_, genero_, conboleto, estado_o);
 
 
 

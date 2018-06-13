@@ -10,7 +10,7 @@ class NodoClientes
     public:
         NodoClientes();
         NodoClientes(string nombre, string tipo_cliente, string estado, int edad, string informacion, string ubicacion, string genero);
-        NodoClientes(string nombre, string tipo_cliente, string estado, int edad, string informacion, string ubicacion, string genero, int conboleto);
+        NodoClientes(string nombre, string tipo_cliente, string estado, int edad, string informacion, string ubicacion, string genero, int conboleto, int estado_o);
         virtual ~NodoClientes();
         int id;
 
@@ -28,6 +28,12 @@ class NodoClientes
         bool tiene_boleto = false;
         bool esta_enatencion = false;
         bool esta_enseguridad = false;
+
+        bool mayor_edad = false;
+        bool menor_edad = false;
+        bool terecera_edad = false;
+        bool discapacitado_ = false;
+        bool embarazada_ = false;
 
     protected:
 

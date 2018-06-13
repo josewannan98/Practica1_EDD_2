@@ -13,7 +13,7 @@
 	"ListaClientes.h"
 	"NodoClientes.h"
 
-1528847744 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/ListaClientes.h
+1528852325 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/ListaClientes.h
 	<iostream>
 	<string>
 	<stdio.h>
@@ -22,7 +22,7 @@
 1528847814 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/NodoClientes.cpp
 	"NodoClientes.h"
 
-1528847814 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/NodoClientes.h
+1528853600 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/NodoClientes.h
 	<stdio.h>
 	<iostream>
 	<string>
@@ -37,7 +37,7 @@
 	<iostream>
 	"NodoClientes.h"
 
-1528787881 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/NodoEquipaje.cpp
+1528850945 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/NodoEquipaje.cpp
 	"NodoEquipaje.h"
 
 1528851177 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/NodoEquipaje.h
@@ -56,4 +56,7 @@
 	<stdlib.h>
 	<time.h>
 	<iostream>
+
+1528851851 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/ListaEquipaje.cpp
+	"ListaEquipaje.h"
 
