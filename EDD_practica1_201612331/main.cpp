@@ -1,22 +1,34 @@
 #include <iostream>
 #include "ListaClientes.h"
 #include <stdio.h>
+#include "ClientesAleatorios.h"
 
 using namespace std;
 
 int main()
 {
-    cout << "Hello world!" << endl;
-    ListaClientes *Clientes = new ListaClientes();
+       cout << "Hello world!" << endl;
 
-    Clientes->insertar_dato("Jose","premium","con pito grande",19,"pito grande","Guatemala");
-    Clientes->id_actual++;
-    Clientes->insertar_dato("Manuel","premium","con pito pequeño",19,"pito pequeño","Guatemala");
-    Clientes->id_actual++;
-    Clientes->insertar_dato("Koka","premium","con pito grande",19,"pito grande","Guatemala");
+       NodoClientes *Clientes;
+       ListaClientes *lista_cliente = new ListaClientes();
 
-    cout << "\n \n Hello world! \n \n \n" << endl;
-    Clientes->mostrar_datos();
+
+       ClientesAleatorios *ho = new ClientesAleatorios();
+
+       Clientes = ho->crearclientes(lista_cliente->id_actual);
+        cout << " \n \n \n " << endl;
+
+        lista_cliente->insertar_datos(Clientes);
+        lista_cliente->id_actual++;
+
+        Clientes = ho->crearclientes(lista_cliente->id_actual);
+        lista_cliente->insertar_datos(Clientes);
+        lista_cliente->id_actual++;
+
+        lista_cliente->mostrar_datos();
+
+
+
 
 
 

@@ -18,8 +18,9 @@ class ListaClientes
         NodoClientes *primero;
         NodoClientes *ultimo;
 
-        void insertar_dato(string nombre, string tipo_cliente, string estado, int edad, string informacion, string ubicacion);
+        void insertar_dato(string nombre, string tipo_cliente, string estado, int edad, string informacion, string ubicacion, string genero);
         void mostrar_datos();
+        void insertar_datos(NodoClientes *Nuevo);
 
 
     protected:
