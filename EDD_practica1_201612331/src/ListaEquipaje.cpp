@@ -37,7 +37,9 @@ NodoEquipaje *pivote = this->primero;
     while(pivote != nullptr)
     {
 
-         cout<<" Nodo: [ "<<pivote->id<<" - "<<pivote->nombre<<" - "<< pivote->tipo<<" - "<<pivote->informacion<<" - "<<pivote->ubicacion<<" ] {}"<<endl;
+         cout<<"---------------------------------------------------"<<endl;
+         cout<<" | "<<pivote->id<<" -  Nombre: "<<pivote->nombre<<"  \n | "<<pivote->id<<" -  Edad: "<< pivote->edad<<"  \n | "<<pivote->id<<" -  Genero: "<<pivote->genero<<"  \n | "<<pivote->id<<" -  Tipo de Cliente: "<<pivote->tipo_cliente<<" \n | "<<pivote->id<<" -  Estado: "<<pivote->estado<<endl;
+         cout<<"---------------------------------------------------"<<endl;
          pivote = pivote->siguiente;
 
     }

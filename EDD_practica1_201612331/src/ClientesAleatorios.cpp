@@ -121,7 +121,7 @@ NodoClientes* ClientesAleatorios::crearclientes(int id_)
             tipo_cliente_ = "Pasajero Invitado";
         }
 
-        nombre_ = "Cliente_" + to_string(id);
+        nombre_ = "Cliente_0" + to_string(id);
 
 
         //seteas su genero de acuerdo al randmon
@@ -129,7 +129,7 @@ NodoClientes* ClientesAleatorios::crearclientes(int id_)
         if(genero == 1)
         {
             genero_ = "Mujer";
-            if(embarazada == 1 && discapacidad != 1)
+            if(embarazada == 1&& discapacidad != 1 && edad > 18 )
             {
                 estado_ = "Mujer Embarazada";
                 estado_o = 3;
