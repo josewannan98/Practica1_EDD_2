@@ -37,8 +37,19 @@ void ListaPaqueteria::Mostrar_datos()
     while(pivote != nullptr)
     {
 
-         cout<<" Nodo: [ "<<pivote->id<<" - "<<pivote->nombre<<" - "<< pivote->tipo<<" - "<<pivote->informacion<<" - "<<pivote->ubicacion<<" ] {}"<<endl;
+         cout<<"---------------------------------------------------"<<endl;
+         cout<<" | "<<pivote->id<<" -  Nombre: "<<pivote->nombre<<"  \n | "<<pivote->id<<" -  Tipo de Paquete: "<< pivote->tipo<<"  \n | "<<pivote->id<<" -  informacion: "<<pivote->informacion<<endl;
+         cout<<"---------------------------------------------------"<<endl;
          pivote = pivote->siguiente;
 
+
     }
+}
+void ListaPaqueteria::Mostrar_unidad(NodoPaqueteria *aux)
+{
+    NodoPaqueteria *pivote = aux;
+
+         cout<<"---------------------------------------------------"<<endl;
+         cout<<" | "<<pivote->id<<" -  Nombre: "<<pivote->nombre<<"  \n | "<<pivote->id<<" -  Tipo de Paquete: "<< pivote->tipo<<"  \n | "<<pivote->id<<" -  informacion: "<<pivote->informacion<<endl;
+         cout<<"---------------------------------------------------"<<endl;
 }

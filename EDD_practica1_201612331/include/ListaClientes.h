@@ -22,6 +22,7 @@ class ListaClientes
         void mostrar_datos();
         //onstructor para setear si viene un Nodo en lugar de informacion
         void insertar_datos(NodoClientes *Nuevo);
+        void mostrar_unidad(NodoClientes *nuevi);
 
 
     protected:

@@ -8,9 +8,16 @@ class NodoEstacion
 {
     public:
         NodoEstacion();
+        NodoEstacion(string nombre,string informacion,int inicio);
         virtual ~NodoEstacion();
+
         NodoEstacion *anterior;
         NodoEstacion *siguiente;
+
+        int id;
+        string nombre;
+        string informacion;
+
         NodoEmpleados *empleado_acargo;
         ListaClientes *clientes_encola;
 

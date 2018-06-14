@@ -42,16 +42,18 @@ NodoEquipaje* equipajeAleatorio::crearequipaje(int id_)
     }
 
 
+    int entrando = 0;
     if(entra_!= 1)
     {
         informacion_ = "Equipaje Entrando -> Ingreso por Hangares";
+        entrando = 1;
     }
     else
     {
         informacion_ = "Equipaje Saliendo -> Esperando Ingreso al Hangar";
     }
 
-    NodoEquipaje *equipaje = new NodoEquipaje(nombre_, tipo_, ubicacion_, informacion_);
+    NodoEquipaje *equipaje = new NodoEquipaje(nombre_, tipo_, ubicacion_, informacion_, entrando);
     //se retorna el valor
     return equipaje;
 

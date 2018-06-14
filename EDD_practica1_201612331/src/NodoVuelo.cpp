@@ -26,9 +26,11 @@ NodoVuelo::NodoVuelo(string nombre_, int pasajeros_, int equipaje_, int paqueter
 if(entra_==1)
 {
     this->entra = true;
+    this->informacion = "Ingreso por hangares";
 }
 else
 {
+    this->informacion = "Listo para ir al hangar";
     this->entra = false;
 }
 

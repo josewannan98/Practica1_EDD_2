@@ -41,3 +41,10 @@ void ListaEmpleados::mostrar_datos()
           pivote = pivote->siguiente;
     }
 }
+void ListaEmpleados::mostrar_unidad(NodoEmpleados *aux)
+{
+    NodoEmpleados *pivote = aux;
+         cout<<"---------------------------------------------------"<<endl;
+         cout<<" | "<<pivote->id<<" -  Nombre: "<<pivote->nombre<<"  \n | "<<pivote->id<<" -  Genero: "<< pivote->genero<<"  \n | "<<pivote->id<<" -  Tipo de Empleado: "<<pivote->tipo_empleado<<"  \n | "<<pivote->id<<" -  Turnos de hoy: "<<pivote->turno<<endl;
+         cout<<"---------------------------------------------------"<<endl;
+}
