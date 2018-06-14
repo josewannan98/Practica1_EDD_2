@@ -14,6 +14,7 @@ Lista_restaurantes::~Lista_restaurantes()
 void Lista_restaurantes::ingresar_restaurante(NodoRestaurantes *nodo)
 {
      NodoRestaurantes *nuevo = nodo;
+     nuevo->id = this->id_actual;
 
     if(primero==nullptr)
     {
@@ -34,7 +35,7 @@ int Lista_restaurantes::personas_aqui()
     int personas = 0;
     while(pivote!=nullptr)
     {
-        personas++;
+        personas = personas + pivote->capacidad;
         pivote = pivote->siguiente;
     }
     return personas;

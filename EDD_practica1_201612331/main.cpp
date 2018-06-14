@@ -22,6 +22,12 @@
 #include "NodoEstacion.h"
 #include "NodoHangares.h"
 #include "ListaHangares.h"
+#include "NodoRestaurantes.h"
+#include "Lista_restaurantes.h"
+#include "NodoColumna_espera.h"
+#include "Lista_SalaEspera.h"
+#include "Lista_filaSalaEspera.h"
+#include "NodoSalaEspera.h"
 
 using namespace std;
 
@@ -32,6 +38,7 @@ void crear_hangares();
 void crear_Estaciones();
 void crear_Restaurante();
 void crear_salaEspera();
+void
 
 
 
@@ -42,7 +49,7 @@ int puestos_seguridad_inicio = 0;
 int numero_hangares = 0;
 int numero_restaurantes = 0;
 int numero_columnas = 0;
-int numero_sillas = 0;
+int numero_filas = 0;
 
 NodoClientes *Clientes;
 ListaClientes *lista_cliente = new ListaClientes();
@@ -64,6 +71,14 @@ ListaEstaciones *lista_estacion = new ListaEstaciones();
 
 NodoHangares *hangar;
 ListaHangares *lista_hangares = new ListaHangares();
+
+NodoRestaurantes *restaurante;
+Lista_restaurantes *listas_restaurantes = new Lista_restaurantes();
+
+
+
+NodoColumna_espera *filassalaespera;
+Lista_filaSalaEspera *filas = new Lista_filaSalaEspera();
 
 int main()
 {
@@ -132,7 +147,7 @@ void iniciandosimulacion()
     cout<<" [6-1] Columnas"<<endl;
     cin>>numero_columnas;
     cout<<" [6-2] Filas"<<endl;
-    cin>>numero_columnas;
+    cin>>numero_filas;
 
      for (int n1 = 0; n1<5; n1++)
      {
@@ -143,6 +158,8 @@ void iniciandosimulacion()
 
     crear_hangares();
     crear_Estaciones();
+    crear_Restaurante();
+    crear_salaEspera();
     iniciar();
 
 
@@ -228,5 +245,36 @@ void crear_Estaciones()
         estacion = new NodoEstacion("Estacion_Seguridad_"+to_string(lista_estacion->id_actual),"Seguridad entrada", 2);
         lista_estacion->ingresar_estacion(estacion);
         lista_estacion->id_actual++;
+    }
+}
+void crear_Restaurante()
+{
+    for(int n=1; n<(numero_restaurantes+1);n++)
+    {
+        int capacidad = 15 + rand() % (35-10);
+        restaurante = new NodoRestaurantes(capacidad);
+        listas_restaurantes->ingresar_restaurante(restaurante);
+        listas_restaurantes->id_actual++;
+
+    }
+}
+void crear_salaEspera()
+{
+    for(int a=0; a<(numero_filas+1); a++)
+    {
+        filassalaespera = new NodoColumna_espera();
+        NodoSalaEspera *columnassalaespera;
+        Lista_SalaEspera *columnas = new Lista_SalaEspera();
+
+        for(int b=0;b<(numero_columnas+1);b++)
+        {
+            columnassalaespera = new NodoSalaEspera();
+            columnas->insertar_datos(columnassalaespera);
+            columnas->id_actual++;
+        }
+
+        filassalaespera->fila = columnas;
+        filas->agregar_nodo(filassalaespera);
+        filas->id_actual++;
     }
 }

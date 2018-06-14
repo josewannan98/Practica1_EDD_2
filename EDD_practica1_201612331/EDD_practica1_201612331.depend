@@ -183,7 +183,7 @@
 1528935978 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/NodoHangares.cpp
 	"NodoHangares.h"
 
-1528949230 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/NodoRestaurantes.cpp
+1528952888 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/NodoRestaurantes.cpp
 	"NodoRestaurantes.h"
 
 1528956479 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/NodoRestaurantes.h
@@ -229,4 +229,10 @@
 
 1528954775 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/Lista_SalaEspera.cpp
 	"Lista_SalaEspera.h"
+
+1528954426 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/NodoColumna_espera.cpp
+	"NodoColumna_espera.h"
+
+1528952901 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/NodoSalaEspera.cpp
+	"NodoSalaEspera.h"
 
