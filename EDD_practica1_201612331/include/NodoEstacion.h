@@ -23,7 +23,7 @@ class NodoEstacion
 
         bool Atencion_alCliente = false;
         bool seguridad_Cliente_inicio = false;
-        bool seguridad_Cliente_final = false;
+
 
     protected:
 

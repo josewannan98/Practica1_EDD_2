@@ -16,14 +16,11 @@ NodoEstacion::NodoEstacion(string nombre_,string informacion_, int inicio_)
     {
         this->Atencion_alCliente = true;
     }
-    else if(inicio_ == 2)
+    else
     {
         this->seguridad_Cliente_inicio = true;
     }
-    else
-    {
-        this->seguridad_Cliente_final = true;
-    }
+
 }
 
 NodoEstacion::~NodoEstacion()

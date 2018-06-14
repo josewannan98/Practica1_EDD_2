@@ -20,19 +20,25 @@
 #include "ListaEmpleados.h"
 #include "ListaEstaciones.h"
 #include "NodoEstacion.h"
+#include "NodoHangares.h"
+#include "ListaHangares.h"
 
 using namespace std;
 
 void iniciandosimulacion();
 void iniciar();
 void crearunidad_simulacion();
+void crear_hangares();
+void crear_Estaciones();
+void crear_Restaurante();
+void crear_salaEspera();
+
 
 
 
 int iteraciones = 0;
 int puestos_atencion = 0;
 int puestos_seguridad_inicio = 0;
-int puestos_seguridad_final = 0;
 int numero_hangares = 0;
 int numero_restaurantes = 0;
 int numero_columnas = 0;
@@ -55,6 +61,9 @@ ListaEmpleados *lista_empleado = new ListaEmpleados();
 
 NodoEstacion *estacion;
 ListaEstaciones *lista_estacion = new ListaEstaciones();
+
+NodoHangares *hangar;
+ListaHangares *lista_hangares = new ListaHangares();
 
 int main()
 {
@@ -114,10 +123,7 @@ void iniciandosimulacion()
     cout<<" [2] - Ingrese el numero de puestos de atencion al cliente que existira en el sistema "<<endl;
     cin>>puestos_atencion;
     cout<<" [3] - Ingrese el numero de puestos de seguridad que existira en el sistema "<<endl;
-    cout<<" [3-1] Puestos al inicio "<<endl;
     cin>>puestos_seguridad_inicio;
-    cout<<" [3-2] Puestos al final "<<endl;
-    cin>>puestos_seguridad_final;
     cout<<" [4] - Ingrese el numero de Hangares  que poseera  el aeropuerto "<<endl;
     cin>>numero_hangares;
     cout<<" [5] - Ingrese el numero de restaurantes  que poseera  el aeropuerto "<<endl;
@@ -135,6 +141,8 @@ void iniciandosimulacion()
     cout<<" ---------------------------------------------- "<<endl;
     cout<<" creando simulacion, Por favor Espere "<<endl;
 
+    crear_hangares();
+    crear_Estaciones();
     iniciar();
 
 
@@ -150,7 +158,7 @@ void iniciar()
 }
 void crearunidad_simulacion()
 {
-    int unidad = 1 + rand() % (4-0);
+    int unidad = 1 + rand() % (5-0);
 
     if(unidad == 1)
     {
@@ -196,5 +204,29 @@ void crearunidad_simulacion()
         lista_empleado->id_actual++;
         lista_empleado->mostrar_unidad(empleado);
 
+    }
+}
+void crear_hangares()
+{
+    for(int n = 1; n<(numero_hangares+1);n++)
+    {
+        hangar = new NodoHangares("hangar_"+to_string(lista_hangares->id_actual));
+        lista_hangares->ingresar_dato(hangar);
+        lista_hangares->id_actual++;
+    }
+}
+void crear_Estaciones()
+{
+    for(int n=1; n<(puestos_atencion+1);n++)
+    {
+        estacion = new NodoEstacion("Estacion_Atencion_"+to_string(lista_estacion->id_actual),"Atencion al Cliente", 1);
+        lista_estacion->ingresar_estacion(estacion);
+        lista_estacion->id_actual++;
+    }
+    for(int n = 1; n<(puestos_seguridad_inicio+1);n++)
+    {
+        estacion = new NodoEstacion("Estacion_Seguridad_"+to_string(lista_estacion->id_actual),"Seguridad entrada", 2);
+        lista_estacion->ingresar_estacion(estacion);
+        lista_estacion->id_actual++;
     }
 }

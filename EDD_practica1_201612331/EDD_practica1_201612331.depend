@@ -1,7 +1,9 @@
 # depslib dependency file v1.0
-1528927164 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/main.cpp
+1528949387 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/main.cpp
 	<iostream>
 	<stdio.h>
+	<stdlib.h>
+	<time.h>
 	"ListaClientes.h"
 	"ClientesAleatorios.h"
 	"ListaEquipaje.h"
@@ -19,6 +21,8 @@
 	"ListaEmpleados.h"
 	"ListaEstaciones.h"
 	"NodoEstacion.h"
+	"NodoHangares.h"
+	"ListaHangares.h"
 
 1528926607 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/ListaClientes.cpp
 	"ListaClientes.h"
@@ -150,7 +154,7 @@
 1528925876 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/NodoEstacion.cpp
 	"NodoEstacion.h"
 
-1528924198 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/NodoEstacion.h
+1528947253 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/NodoEstacion.h
 	"NodoEmpleados.h"
 	"ListaClientes.h"
 
@@ -159,4 +163,15 @@
 
 1528926214 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/ListaEstaciones.cpp
 	"ListaEstaciones.h"
+
+1528937973 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/NodoHangares.h
+	"NodoVuelo.h"
+
+1528949420 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/ListaHangares.h
+	"NodoHangares.h"
+
+1528949333 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/ColaEspera_Clientes.cpp
+	"ColaEspera_Clientes.h"
+
+1528949332 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/ColaEspera_Clientes.h
 
