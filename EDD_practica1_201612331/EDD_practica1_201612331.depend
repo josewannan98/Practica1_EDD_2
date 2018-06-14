@@ -85,7 +85,7 @@
 1528860401 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/paqueteriaAleatoria.h
 	"NodoPaqueteria.h"
 
-1528926812 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/ListaPaqueteria.cpp
+1528952641 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/ListaPaqueteria.cpp
 	"ListaPaqueteria.h"
 
 1528922806 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/NodoPaqueteria.cpp
@@ -151,7 +151,7 @@
 
 1528871361 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/ListaAtencion.h
 
-1528925876 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/NodoEstacion.cpp
+1528947236 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/NodoEstacion.cpp
 	"NodoEstacion.h"
 
 1528947253 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/NodoEstacion.h
@@ -170,8 +170,63 @@
 1528949420 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/ListaHangares.h
 	"NodoHangares.h"
 
-1528949333 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/ColaEspera_Clientes.cpp
+1528956373 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/ColaEspera_Clientes.cpp
+	"ColaEspera_Clientes.h"
+	"NodoClientes.h"
+
+1528955309 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/ColaEspera_Clientes.h
+	"NodoClientes.h"
+
+1528949443 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/ListaHangares.cpp
+	"ListaHangares.h"
+
+1528935978 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/NodoHangares.cpp
+	"NodoHangares.h"
+
+1528949230 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/NodoRestaurantes.cpp
+	"NodoRestaurantes.h"
+
+1528956479 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/NodoRestaurantes.h
 	"ColaEspera_Clientes.h"
 
-1528949332 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/ColaEspera_Clientes.h
+1528956398 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/ColaEspera_Equipaje.cpp
+	"ColaEspera_Equipaje.h"
+	"NodoEquipaje.h"
+
+1528955860 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/ColaEspera_Equipaje.h
+	"NodoEquipaje.h"
+
+1528956412 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/ColaEspera_Paqueteria.cpp
+	"ColaEspera_Paqueteria.h"
+	"NodoPaqueteria.h"
+
+1528956170 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/ColaEspera_Paqueteria.h
+	"NodoPaqueteria.h"
+
+1528955079 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/Lista_filaSalaEspera.cpp
+	"Lista_filaSalaEspera.h"
+	"NodoColumna_espera.h"
+	"Lista_SalaEspera.h"
+
+1528956459 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/Lista_filaSalaEspera.h
+	"Lista_SalaEspera.h"
+	"NodoColumna_espera.h"
+
+1528954690 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/Lista_SalaEspera.h
+	"NodoSalaEspera.h"
+
+1528956432 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/NodoSalaEspera.h
+	"NodoClientes.h"
+
+1528956506 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/NodoColumna_espera.h
+	"Lista_SalaEspera.h"
+
+1528953785 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/Lista_restaurantes.cpp
+	"Lista_restaurantes.h"
+
+1528953785 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/Lista_restaurantes.h
+	"NodoRestaurantes.h"
+
+1528954775 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/Lista_SalaEspera.cpp
+	"Lista_SalaEspera.h"
 
