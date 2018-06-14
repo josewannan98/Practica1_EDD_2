@@ -1,4 +1,5 @@
 #include "ListaEstaciones.h"
+#include "NodoEmpleados.h"
 
 ListaEstaciones::ListaEstaciones()
 {
@@ -51,4 +52,21 @@ void ListaEstaciones::mostrar_datos()
         pivote = pivote->siguiente;
 
     }while(pivote != nullptr && pivote!= this->ultimo->siguiente);
+}
+bool ListaEstaciones::ingresando_empleado(NodoEmpleados *empleado_)
+{
+    NodoEstacion *pivote = this->primero;
+    bool tts = false;
+    do
+    {
+        if(pivote->tiene_empleado == false)
+        {
+            pivote->empleado_acargo = empleado_;
+            pivote->tiene_empleado = true;
+            tts = true;
+            break;
+        }
+        pivote = pivote->siguiente;
+    }while(pivote != nullptr && pivote!= this->ultimo->siguiente);
+    return tts;
 }

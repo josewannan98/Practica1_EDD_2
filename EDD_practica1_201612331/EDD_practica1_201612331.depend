@@ -1,7 +1,9 @@
 # depslib dependency file v1.0
-1528927164 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/main.cpp
+1528963494 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/main.cpp
 	<iostream>
 	<stdio.h>
+	<stdlib.h>
+	<time.h>
 	"ListaClientes.h"
 	"ClientesAleatorios.h"
 	"ListaEquipaje.h"
@@ -19,6 +21,14 @@
 	"ListaEmpleados.h"
 	"ListaEstaciones.h"
 	"NodoEstacion.h"
+	"NodoHangares.h"
+	"ListaHangares.h"
+	"NodoRestaurantes.h"
+	"Lista_restaurantes.h"
+	"NodoColumna_espera.h"
+	"Lista_SalaEspera.h"
+	"Lista_filaSalaEspera.h"
+	"NodoSalaEspera.h"
 
 1528926607 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/ListaClientes.cpp
 	"ListaClientes.h"
@@ -81,7 +91,7 @@
 1528860401 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/paqueteriaAleatoria.h
 	"NodoPaqueteria.h"
 
-1528926812 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/ListaPaqueteria.cpp
+1528952641 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/ListaPaqueteria.cpp
 	"ListaPaqueteria.h"
 
 1528922806 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/NodoPaqueteria.cpp
@@ -147,16 +157,94 @@
 
 1528871361 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/ListaAtencion.h
 
-1528925876 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/NodoEstacion.cpp
+1528947236 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/NodoEstacion.cpp
 	"NodoEstacion.h"
 
-1528924198 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/NodoEstacion.h
+1528960580 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/NodoEstacion.h
 	"NodoEmpleados.h"
 	"ListaClientes.h"
+	"ColaEspera_Clientes.h"
+	"ColaEspera_Equipaje.h"
+	"ColaEspera_Paqueteria.h"
 
-1528925815 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/ListaEstaciones.h
+1528960660 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/ListaEstaciones.h
 	"NodoEstacion.h"
+	"NodoEmpleados.h"
 
-1528926214 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/ListaEstaciones.cpp
+1528960992 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/ListaEstaciones.cpp
 	"ListaEstaciones.h"
+	"NodoEmpleados.h"
+
+1528937973 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/NodoHangares.h
+	"NodoVuelo.h"
+
+1528961726 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/ListaHangares.h
+	"NodoHangares.h"
+	"NodoVuelo.h"
+
+1528956373 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/ColaEspera_Clientes.cpp
+	"ColaEspera_Clientes.h"
+	"NodoClientes.h"
+
+1528955309 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/ColaEspera_Clientes.h
+	"NodoClientes.h"
+
+1528963552 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/ListaHangares.cpp
+	"ListaHangares.h"
+
+1528935978 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/NodoHangares.cpp
+	"NodoHangares.h"
+
+1528952888 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/NodoRestaurantes.cpp
+	"NodoRestaurantes.h"
+
+1528956479 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/NodoRestaurantes.h
+	"ColaEspera_Clientes.h"
+
+1528956398 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/ColaEspera_Equipaje.cpp
+	"ColaEspera_Equipaje.h"
+	"NodoEquipaje.h"
+
+1528955860 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/ColaEspera_Equipaje.h
+	"NodoEquipaje.h"
+
+1528956412 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/ColaEspera_Paqueteria.cpp
+	"ColaEspera_Paqueteria.h"
+	"NodoPaqueteria.h"
+
+1528956170 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/ColaEspera_Paqueteria.h
+	"NodoPaqueteria.h"
+
+1528955079 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/Lista_filaSalaEspera.cpp
+	"Lista_filaSalaEspera.h"
+	"NodoColumna_espera.h"
+	"Lista_SalaEspera.h"
+
+1528956459 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/Lista_filaSalaEspera.h
+	"Lista_SalaEspera.h"
+	"NodoColumna_espera.h"
+
+1528954690 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/Lista_SalaEspera.h
+	"NodoSalaEspera.h"
+
+1528956432 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/NodoSalaEspera.h
+	"NodoClientes.h"
+
+1528956506 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/NodoColumna_espera.h
+	"Lista_SalaEspera.h"
+
+1528957165 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/Lista_restaurantes.cpp
+	"Lista_restaurantes.h"
+
+1528953785 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/Lista_restaurantes.h
+	"NodoRestaurantes.h"
+
+1528954775 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/Lista_SalaEspera.cpp
+	"Lista_SalaEspera.h"
+
+1528954426 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/NodoColumna_espera.cpp
+	"NodoColumna_espera.h"
+
+1528952901 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/NodoSalaEspera.cpp
+	"NodoSalaEspera.h"
 

@@ -20,23 +20,42 @@
 #include "ListaEmpleados.h"
 #include "ListaEstaciones.h"
 #include "NodoEstacion.h"
+#include "NodoHangares.h"
+#include "ListaHangares.h"
+#include "NodoRestaurantes.h"
+#include "Lista_restaurantes.h"
+#include "NodoColumna_espera.h"
+#include "Lista_SalaEspera.h"
+#include "Lista_filaSalaEspera.h"
+#include "NodoSalaEspera.h"
 
 using namespace std;
 
 void iniciandosimulacion();
 void iniciar();
+//crear unidades
 void crearunidad_simulacion();
+//iniciar variables
+void crear_hangares();
+void crear_Estaciones();
+void crear_Restaurante();
+void crear_salaEspera();
+//primer proceso
+void entrada_principal();
+void a_hangar(NodoVuelo *vuelo);
+void entrada_secundaria();
+void a_estaciones(NodoEmpleados *empleado);
+
 
 
 
 int iteraciones = 0;
 int puestos_atencion = 0;
 int puestos_seguridad_inicio = 0;
-int puestos_seguridad_final = 0;
 int numero_hangares = 0;
 int numero_restaurantes = 0;
 int numero_columnas = 0;
-int numero_sillas = 0;
+int numero_filas = 0;
 
 NodoClientes *Clientes;
 ListaClientes *lista_cliente = new ListaClientes();
@@ -55,6 +74,17 @@ ListaEmpleados *lista_empleado = new ListaEmpleados();
 
 NodoEstacion *estacion;
 ListaEstaciones *lista_estacion = new ListaEstaciones();
+
+NodoHangares *hangar;
+ListaHangares *lista_hangares = new ListaHangares();
+
+NodoRestaurantes *restaurante;
+Lista_restaurantes *listas_restaurantes = new Lista_restaurantes();
+
+
+
+NodoColumna_espera *filassalaespera;
+Lista_filaSalaEspera *filas = new Lista_filaSalaEspera();
 
 int main()
 {
@@ -114,10 +144,7 @@ void iniciandosimulacion()
     cout<<" [2] - Ingrese el numero de puestos de atencion al cliente que existira en el sistema "<<endl;
     cin>>puestos_atencion;
     cout<<" [3] - Ingrese el numero de puestos de seguridad que existira en el sistema "<<endl;
-    cout<<" [3-1] Puestos al inicio "<<endl;
     cin>>puestos_seguridad_inicio;
-    cout<<" [3-2] Puestos al final "<<endl;
-    cin>>puestos_seguridad_final;
     cout<<" [4] - Ingrese el numero de Hangares  que poseera  el aeropuerto "<<endl;
     cin>>numero_hangares;
     cout<<" [5] - Ingrese el numero de restaurantes  que poseera  el aeropuerto "<<endl;
@@ -126,7 +153,7 @@ void iniciandosimulacion()
     cout<<" [6-1] Columnas"<<endl;
     cin>>numero_columnas;
     cout<<" [6-2] Filas"<<endl;
-    cin>>numero_columnas;
+    cin>>numero_filas;
 
      for (int n1 = 0; n1<5; n1++)
      {
@@ -135,6 +162,10 @@ void iniciandosimulacion()
     cout<<" ---------------------------------------------- "<<endl;
     cout<<" creando simulacion, Por favor Espere "<<endl;
 
+    crear_hangares();
+    crear_Estaciones();
+    crear_Restaurante();
+    crear_salaEspera();
     iniciar();
 
 
@@ -150,7 +181,7 @@ void iniciar()
 }
 void crearunidad_simulacion()
 {
-    int unidad = 1 + rand() % (4-0);
+    int unidad = 1 + rand() % (5-0);
 
     if(unidad == 1)
     {
@@ -186,6 +217,7 @@ void crearunidad_simulacion()
         lista_vuelo->ingresar_datos(vuelo);
         lista_vuelo->id_actual++;
         lista_vuelo->mostrar_unidad(vuelo);
+        a_hangar(vuelo);
 
     }
     else
@@ -195,6 +227,99 @@ void crearunidad_simulacion()
         lista_empleado->ingresar_datos(empleado);
         lista_empleado->id_actual++;
         lista_empleado->mostrar_unidad(empleado);
+        a_estaciones(empleado);
 
     }
+}
+void crear_hangares()
+{
+    for(int n = 1; n<(numero_hangares+1);n++)
+    {
+        hangar = new NodoHangares("hangar_"+to_string(lista_hangares->id_actual));
+        lista_hangares->ingresar_dato(hangar);
+        lista_hangares->id_actual++;
+    }
+}
+void crear_Estaciones()
+{
+    for(int n=1; n<(puestos_atencion+1);n++)
+    {
+        estacion = new NodoEstacion("Estacion_Atencion_"+to_string(lista_estacion->id_actual),"Atencion al Cliente", 1);
+        lista_estacion->ingresar_estacion(estacion);
+        lista_estacion->id_actual++;
+    }
+    for(int n = 1; n<(puestos_seguridad_inicio+1);n++)
+    {
+        estacion = new NodoEstacion("Estacion_Seguridad_"+to_string(lista_estacion->id_actual),"Seguridad entrada", 2);
+        lista_estacion->ingresar_estacion(estacion);
+        lista_estacion->id_actual++;
+    }
+}
+void crear_Restaurante()
+{
+    for(int n=1; n<(numero_restaurantes+1);n++)
+    {
+        int capacidad = 15 + rand() % (35-10);
+        restaurante = new NodoRestaurantes(capacidad);
+        listas_restaurantes->ingresar_restaurante(restaurante);
+        listas_restaurantes->id_actual++;
+
+    }
+}
+void crear_salaEspera()
+{
+    for(int a=0; a<(numero_filas+1); a++)
+    {
+        filassalaespera = new NodoColumna_espera();
+        NodoSalaEspera *columnassalaespera;
+        Lista_SalaEspera *columnas = new Lista_SalaEspera();
+
+        for(int b=0;b<(numero_columnas+1);b++)
+        {
+            columnassalaespera = new NodoSalaEspera();
+            columnas->insertar_datos(columnassalaespera);
+            columnas->id_actual++;
+        }
+
+        filassalaespera->fila = columnas;
+        filas->agregar_nodo(filassalaespera);
+        filas->id_actual++;
+    }
+}
+void entrada_principal()
+{
+
+}
+void a_hangar(NodoVuelo *vuelo)
+{
+    bool ingresando = lista_hangares->ingresar_vuelo(vuelo);
+    if(ingresando == true)
+    {
+        cout<<"\n El vuelo ["<<vuelo->nombre<<"] fue asignado a un hangar"<<endl;
+
+    }
+    else
+    {
+        cout<<"\n El vuelo ["<<vuelo->nombre<<"] no encontro hangar disponible y se retiro"<<endl;
+    }
+
+}
+void entrada_secundaria()
+{
+
+}
+void a_estaciones(NodoEmpleados *empleado)
+{
+
+    bool ingresando = lista_estacion->ingresando_empleado(empleado);
+    if(ingresando == true)
+    {
+        cout<<"\n El empleado ["<<empleado->nombre<<"] fue asignado a una estacion"<<endl;
+
+    }
+    else
+    {
+        cout<<"\n El empleado ["<<empleado->nombre<<"] no encontro estacion y decidio trabajar mañana"<<endl;
+    }
+
 }

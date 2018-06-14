@@ -1,6 +1,7 @@
 #ifndef LISTAESTACIONES_H
 #define LISTAESTACIONES_H
 #include "NodoEstacion.h"
+#include "NodoEmpleados.h"
 
 class ListaEstaciones
 {
@@ -14,6 +15,7 @@ class ListaEstaciones
 
         void ingresar_estacion(NodoEstacion *estacion);
         void mostrar_datos();
+        bool ingresando_empleado(NodoEmpleados *empleado);
 
     protected:
 
