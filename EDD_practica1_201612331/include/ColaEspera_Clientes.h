@@ -14,7 +14,7 @@ class ColaEspera_Clientes
 
         void insertar_alinicio(NodoClientes *cliente);
         void insertar_normal(NodoClientes *cliente);
-        void insertar_ordenado(NodoClientes *cliente);
+        int cuantas_personas();
 
 
     protected:

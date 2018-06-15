@@ -48,7 +48,8 @@ void entrada_secundaria1(NodoEquipaje *equipaje);
 void entrada_secundaria2(NodoPaqueteria *paquete);
 void a_estaciones(NodoEmpleados *empleado);
 
-
+void actualizar_estaciones();
+void actualizar_colaEspera();
 
 
 int iteraciones = 0;
@@ -58,6 +59,7 @@ int numero_hangares = 0;
 int numero_restaurantes = 0;
 int numero_columnas = 0;
 int numero_filas = 0;
+
 
 NodoClientes *Clientes;
 ListaClientes *lista_cliente = new ListaClientes();
@@ -87,7 +89,6 @@ NodoColumna_espera *filassalaespera;
 Lista_filaSalaEspera *filas = new Lista_filaSalaEspera();
 
 ColaEspera_Clientes *atencion_ = new ColaEspera_Clientes();
-
 
 int main()
 {
@@ -142,6 +143,27 @@ int main()
 
 void iniciandosimulacion()
 {
+
+lista_cliente = new ListaClientes();
+
+lista_equipaje = new ListaEquipaje();
+
+lista_paqueteria = new ListaPaqueteria();
+lista_vuelo = new ListaVuelo();
+
+lista_empleado = new ListaEmpleados();
+
+lista_estacion = new ListaEstaciones();
+
+lista_hangares = new ListaHangares();
+
+listas_restaurantes = new Lista_restaurantes();
+
+filas = new Lista_filaSalaEspera();
+
+atencion_ = new ColaEspera_Clientes();
+
+
     bool inciando = true;
     cout<<" [1] - Ingrese el numero de iteraciones que poseera la simulacion "<<endl;
     cin>>iteraciones;
@@ -178,9 +200,17 @@ void iniciar()
 {
     for(int n=1; n<iteraciones+1;n++)
     {
+
+
         cout<<" ############################################################# \n \n Iteracion No. "<<n<<"\n \n"<<endl;
         crearunidad_simulacion();
         cout<<" ############################################################# \n \n "<<endl;
+        cout<<" En cola, "<<atencion_->cuantas_personas()<<" personas"<<endl;
+
+         actualizar_estaciones();
+         actualizar_colaEspera();
+
+
     }
 }
 void crearunidad_simulacion()
@@ -395,6 +425,7 @@ void entrada_secundaria2(NodoPaqueteria *paqueteria)
 void a_estaciones(NodoEmpleados *empleado)
 {
 
+
     bool ingresando = lista_estacion->ingresando_empleado(empleado);
     if(ingresando == true)
     {
@@ -405,5 +436,26 @@ void a_estaciones(NodoEmpleados *empleado)
     {
         cout<<"\n El empleado ["<<empleado->nombre<<"] no encontro estacion y decidio trabajar mañana"<<endl;
     }
+
+}
+void actualizar_colaEspera()
+{
+
+         atencion_ = lista_estacion->cola_espera;
+    cout<<" \n La cola de Espera para Atencion, posee ahora - "<<atencion_->cuantas_personas()<<" personas"<<endl;
+
+
+
+}
+void actualizar_estaciones()
+{
+
+ cout<<" entrando a centro de atencion "<<endl;
+ lista_estacion->elimnar_atencion();
+ cout<<" saliendo de centro de atencion "<<endl;
+ lista_estacion->setnuevoColaEspera(atencion_);
+ cout<<" entrando a seguridad "<<endl;
+ lista_estacion->eliminar_seguridad();
+ cout<<" saliendo de seguridad "<<endl;
 
 }

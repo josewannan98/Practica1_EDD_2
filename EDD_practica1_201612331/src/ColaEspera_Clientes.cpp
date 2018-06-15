@@ -47,4 +47,17 @@ void ColaEspera_Clientes::insertar_normal(NodoClientes *nodo)
 
     }
 }
+int ColaEspera_Clientes::cuantas_personas()
+{
+    int personas=0;
+    NodoClientes *pivote = this->primero;
+
+    while(pivote!=nullptr)
+    {
+        personas++;
+        pivote = pivote->siguiente;
+    }
+    return personas;
+
+}
 

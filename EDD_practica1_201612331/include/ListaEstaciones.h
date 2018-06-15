@@ -4,6 +4,7 @@
 #include "NodoEmpleados.h"
 #include "Lista_restaurantes.h"
 #include "Lista_filaSalaEspera.h"
+#include "ColaEspera_Clientes.h"
 
 class ListaEstaciones
 {
@@ -14,8 +15,10 @@ class ListaEstaciones
         NodoEstacion *primero;
         NodoEstacion *ultimo;
 
-        listas_restaurantes *restaurante = new listas_restaurantes();
+        Lista_restaurantes *restaurante = new Lista_restaurantes();
         Lista_filaSalaEspera *SalaEspera = new Lista_filaSalaEspera();
+
+        ColaEspera_Clientes *cola_espera = new ColaEspera_Clientes();
 
 
         int id_actual = 0;
@@ -28,12 +31,22 @@ class ListaEstaciones
 
         bool a_estacionSeguridad2(NodoPaqueteria *cliente);//ya
 
-        bool elimnar_atencion();
-        void eliminar_seguridad();//ya
-        void eliminar_segurida(NodoEstacion* estacion);//ya
+        void elimnar_atencion();
+        void eliminar_atention(NodoEstacion *estacion);
 
-        bool enviar_arestaurantes(listas_restaurantes* restaurante, NodoClientes *clientes);
-        bool enviar_aSalaEspera(Lista_filaSalaEspera* ColaEspera, NodoClientes *clientes);
+        NodoClientes* llamar_coladeEspera();
+
+        void setnuevoColaEspera(ColaEspera_Clientes *cola_clientes);
+        void enviar_aseguridad(NodoClientes *cliente);
+
+        NodoClientes* traer_decolaseguridad(NodoEstacion *estacion);
+
+
+        void eliminar_seguridad();//ya
+        void eliminar_segurida(NodoEstacion *estacion);//ya
+
+        void enviar_arestaurantes(Lista_restaurantes *restaurante, NodoClientes *clientes);//ya
+        void enviar_aSalaEspera(Lista_filaSalaEspera *ColaEspera, NodoClientes *clientes);//ya
 
 
         void ingresar_estacion(NodoEstacion *estacion);//ya
