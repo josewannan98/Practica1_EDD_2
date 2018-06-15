@@ -12,6 +12,7 @@ class NodoSalaEspera
 
         int id;
         NodoClientes *cola_clientes;
+        bool ocupado = false;
 
         NodoSalaEspera *anterior;
         NodoSalaEspera *siguiente;

@@ -22,10 +22,12 @@ class NodoEstacion
         string informacion;
 
         NodoEmpleados *empleado_acargo;
-        NodoClientes *cliente_enatencion;
-        ColaEspera_Clientes *clientes_encola;
-        ColaEspera_Equipaje *equipaje_encola;
-        ColaEspera_Paqueteria *paqueteria_encola;
+
+        NodoClientes *cliente_enatencion; //atencion
+
+        ColaEspera_Clientes *clientes_encola = new ColaEspera_Clientes();   //seguridad
+        ColaEspera_Equipaje *equipaje_encola =  new ColaEspera_Equipaje();
+        ColaEspera_Paqueteria *paqueteria_encola = new ColaEspera_Paqueteria();
 
         bool Atencion_alCliente = false;
         bool seguridad_Cliente_inicio = false;

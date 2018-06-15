@@ -41,12 +41,15 @@ void crear_Estaciones();
 void crear_Restaurante();
 void crear_salaEspera();
 //primer proceso
-void entrada_principal();
+void entrada_principal2(NodoClientes *cliente);
+void entrada_principal1(NodoClientes *cliente);
 void a_hangar(NodoVuelo *vuelo);
-void entrada_secundaria();
+void entrada_secundaria1(NodoEquipaje *equipaje);
+void entrada_secundaria2(NodoPaqueteria *paquete);
 void a_estaciones(NodoEmpleados *empleado);
 
-
+void actualizar_estaciones();
+void actualizar_colaEspera();
 
 
 int iteraciones = 0;
@@ -56,6 +59,7 @@ int numero_hangares = 0;
 int numero_restaurantes = 0;
 int numero_columnas = 0;
 int numero_filas = 0;
+
 
 NodoClientes *Clientes;
 ListaClientes *lista_cliente = new ListaClientes();
@@ -84,11 +88,11 @@ Lista_restaurantes *listas_restaurantes = new Lista_restaurantes();
 NodoColumna_espera *filassalaespera;
 Lista_filaSalaEspera *filas = new Lista_filaSalaEspera();
 
-ColaEspera_Clientes *atencion = new ColaEspera_Clientes();
-
+ColaEspera_Clientes *atencion_ = new ColaEspera_Clientes();
 
 int main()
 {
+
        cout << "Hello world!" << endl;
 
 
@@ -139,6 +143,27 @@ int main()
 
 void iniciandosimulacion()
 {
+
+lista_cliente = new ListaClientes();
+
+lista_equipaje = new ListaEquipaje();
+
+lista_paqueteria = new ListaPaqueteria();
+lista_vuelo = new ListaVuelo();
+
+lista_empleado = new ListaEmpleados();
+
+lista_estacion = new ListaEstaciones();
+
+lista_hangares = new ListaHangares();
+
+listas_restaurantes = new Lista_restaurantes();
+
+filas = new Lista_filaSalaEspera();
+
+atencion_ = new ColaEspera_Clientes();
+
+
     bool inciando = true;
     cout<<" [1] - Ingrese el numero de iteraciones que poseera la simulacion "<<endl;
     cin>>iteraciones;
@@ -175,9 +200,17 @@ void iniciar()
 {
     for(int n=1; n<iteraciones+1;n++)
     {
+
+
         cout<<" ############################################################# \n \n Iteracion No. "<<n<<"\n \n"<<endl;
         crearunidad_simulacion();
         cout<<" ############################################################# \n \n "<<endl;
+        cout<<" En cola, "<<atencion_->cuantas_personas()<<" personas"<<endl;
+
+         actualizar_estaciones();
+         actualizar_colaEspera();
+
+
     }
 }
 void crearunidad_simulacion()
@@ -192,6 +225,17 @@ void crearunidad_simulacion()
         lista_cliente->id_actual++;
         lista_cliente->mostrar_unidad(Clientes);
 
+        if(Clientes->tiene_boleto == true)
+        {
+            Clientes->esta_enseguridad = true;
+            entrada_principal2(Clientes);
+        }
+        else
+        {
+            Clientes->esta_enatencion = true;
+            entrada_principal1(Clientes);
+        }
+
     }
     else if(unidad == 2)
     {
@@ -200,6 +244,14 @@ void crearunidad_simulacion()
         lista_equipaje->agregar_datos(Equipaje);
         lista_equipaje->id_actual++;
         lista_equipaje->mostrar_unidad(Equipaje);
+        if(Equipaje->entrando==false)
+        {
+            entrada_secundaria1(Equipaje);
+        }
+        else
+        {
+             cout<<" \n El equipaje ["<<Equipaje->nombre<<"] se ha transportado desde el hangar"<<endl;
+        }
 
     }
     else if(unidad == 3)
@@ -209,6 +261,15 @@ void crearunidad_simulacion()
         lista_paqueteria->ingresar_dato(paquete);
         lista_paqueteria->id_actual++;
         lista_paqueteria->Mostrar_unidad(paquete);
+
+        if(paquete->entrando==false)
+        {
+            entrada_secundaria2(paquete);
+        }
+        else
+        {
+             cout<<" \n El paquete ["<<paquete->nombre<<"] se ha transportado desde el hangar"<<endl;
+        }
 
     }
     else if(unidad == 4)
@@ -266,6 +327,8 @@ void crear_Restaurante()
         listas_restaurantes->id_actual++;
 
     }
+    lista_estacion->restaurante = listas_restaurantes;
+
 }
 void crear_salaEspera()
 {
@@ -286,9 +349,43 @@ void crear_salaEspera()
         filas->agregar_nodo(filassalaespera);
         filas->id_actual++;
     }
+
+    lista_estacion->SalaEspera = filas;
 }
-void entrada_principal()
+void entrada_principal1(NodoClientes *atencion)
 {
+
+    bool entro  = lista_estacion->a_estacionAtencion(atencion);
+    if(entro == true)
+    {
+        cout<<"\n El Cliente ["<<atencion->nombre<<"] tuvo suerte \n encontro la estacion vacia y avanzo"<<endl;
+    }
+    else
+    {
+         cout<<"\n El Cliente ["<<atencion->nombre<<"] ingreso a la cola de Espera \n del Centro de Atencion"<<endl;
+
+         if(atencion->embarazada_==true || atencion->discapacitado_ ==true || atencion->terecera_edad==true)
+         {
+            atencion_->insertar_alinicio(atencion);
+            cout<<" Debido a su estado ["<<atencion->estado<<"] ingreso al inicio de la cola de Espera \n del Centro de Atencion"<<endl;
+         }
+         else
+         {
+            atencion_->insertar_normal(atencion);
+
+         }
+    }
+
+
+}
+void entrada_principal2(NodoClientes *seguridad)
+{
+    bool intros = lista_estacion->a_estacionSeguridad(seguridad);
+    if(intros==true)
+    {
+         cout<<"\n El Cliente ["<<seguridad->nombre<<"] ingreso a la estacion de seguridad"<<endl;
+    }
+
 
 }
 void a_hangar(NodoVuelo *vuelo)
@@ -305,12 +402,29 @@ void a_hangar(NodoVuelo *vuelo)
     }
 
 }
-void entrada_secundaria()
+void entrada_secundaria1(NodoEquipaje *equipaje)
 {
+    bool ingrea = lista_estacion->a_estacionSeguridad1(equipaje);
+    if(ingrea == true)
+    {
+        cout<<" \n El equipaje ["<<equipaje->nombre<<"] entro a la cola para revision"<<endl;
+
+    }
+
+}
+void entrada_secundaria2(NodoPaqueteria *paqueteria)
+{
+    bool ingrea = lista_estacion->a_estacionSeguridad2(paqueteria);
+    if(ingrea == true)
+    {
+        cout<<" \n El paquete ["<<paqueteria->nombre<<"] entro a la cola para revision"<<endl;
+
+    }
 
 }
 void a_estaciones(NodoEmpleados *empleado)
 {
+
 
     bool ingresando = lista_estacion->ingresando_empleado(empleado);
     if(ingresando == true)
@@ -322,5 +436,26 @@ void a_estaciones(NodoEmpleados *empleado)
     {
         cout<<"\n El empleado ["<<empleado->nombre<<"] no encontro estacion y decidio trabajar mañana"<<endl;
     }
+
+}
+void actualizar_colaEspera()
+{
+
+         atencion_ = lista_estacion->cola_espera;
+    cout<<" \n La cola de Espera para Atencion, posee ahora - "<<atencion_->cuantas_personas()<<" personas"<<endl;
+
+
+
+}
+void actualizar_estaciones()
+{
+
+ cout<<" entrando a centro de atencion "<<endl;
+ lista_estacion->elimnar_atencion();
+ cout<<" saliendo de centro de atencion "<<endl;
+ lista_estacion->setnuevoColaEspera(atencion_);
+ cout<<" entrando a seguridad "<<endl;
+ lista_estacion->eliminar_seguridad();
+ cout<<" saliendo de seguridad "<<endl;
 
 }

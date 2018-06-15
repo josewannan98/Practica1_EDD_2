@@ -12,7 +12,6 @@ class NodoColumna_espera
         int id;
         Lista_SalaEspera *fila;
 
-        bool ocupado = false;
 
 
     protected:
