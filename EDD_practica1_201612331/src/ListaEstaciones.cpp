@@ -334,18 +334,29 @@ void ListaEstaciones::eliminar_segurida(NodoEstacion* estacion)
     cout<<"en metodo segurida"<<endl;
     NodoClientes *Envio = estacion->cliente_enatencion;
     estacion->cliente_enatencion = nullptr;
-    if(estacion->clientes_encola->primero->siguiente!=nullptr)
+
+    if(estacion->tiene_empleado==true)
     {
+        cout<<"wass"<<endl;
         NodoClientes *cliente_traido = traer_decolaseguridad(estacion);
-        estacion->cliente_enatencion = cliente_traido;
+        if(cliente_traido!=nullptr)
+        {
+         estacion->cliente_enatencion = cliente_traido;
 
         cout<<"\n El Cliente ["<<cliente_traido->nombre<<"] ingreso a una estacion de seguridad \n Estacion -> [ Estacion_"<<estacion->id<<"]"<<endl;
 
+        }
+        else
+        {
+
+        cout<<"\n La estacion -> [ Estacion_"<<estacion->id<<"] no tiene clientes que revisar"<<endl;
+
+        }
 
     }
     else
     {
-         cout<<"\n La Cola par avanzar a la estacion de seguridad No."<<estacion->id<<endl;
+         cout<<"\n La Cola para avanzar a la estacion de seguridad No."<<estacion->id<<" esta vacia"<<endl;
     }
 /*
     int random = 1 + rand() % (3-1);
@@ -363,25 +374,9 @@ void ListaEstaciones::eliminar_segurida(NodoEstacion* estacion)
 }
 NodoClientes* ListaEstaciones::traer_decolaseguridad(NodoEstacion *estacion)
 {
-
-    NodoClientes *envio = estacion->clientes_encola->primero;
-    NodoClientes *a_llamar = estacion->clientes_encola->primero;
-
-    if(a_llamar->siguiente!=nullptr)
-    {
-        NodoClientes *nuevo_primero = a_llamar->siguiente;
-        nuevo_primero->antetior = nullptr;
-        cola_espera->primero = nuevo_primero;
-        delete a_llamar;
-    }
-    else
-    {
-        delete a_llamar;
-
-    }
+    NodoClientes *envio = estacion->clientes_encola->enviar_siguiente();
+    estacion->clientes_encola->push_();
     return envio;
-
-
 }
 void ListaEstaciones::enviar_arestaurantes(Lista_restaurantes *restaurante, NodoClientes *clientes)
 {

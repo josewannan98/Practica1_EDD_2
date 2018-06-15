@@ -174,7 +174,7 @@
 	"Lista_filaSalaEspera.h"
 	"ColaEspera_Clientes.h"
 
-1529059808 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/ListaEstaciones.cpp
+1529096280 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/ListaEstaciones.cpp
 	"ListaEstaciones.h"
 	"NodoEmpleados.h"
 	"Lista_filaSalaEspera.h"
@@ -190,11 +190,11 @@
 	"NodoHangares.h"
 	"NodoVuelo.h"
 
-1529051529 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/ColaEspera_Clientes.cpp
+1529096232 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/ColaEspera_Clientes.cpp
 	"ColaEspera_Clientes.h"
 	"NodoClientes.h"
 
-1529051522 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/ColaEspera_Clientes.h
+1529096167 /home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/include/ColaEspera_Clientes.h
 	"NodoClientes.h"
 
 1528963846 source:/home/josewannan/Escritorio/Practicas y Proyectos/EDD_practica1_201612331/src/ListaHangares.cpp

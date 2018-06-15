@@ -16,6 +16,9 @@ class ColaEspera_Clientes
         void insertar_normal(NodoClientes *cliente);
         int cuantas_personas();
 
+        NodoClientes* enviar_siguiente();
+        void push_();
+
 
     protected:
 
