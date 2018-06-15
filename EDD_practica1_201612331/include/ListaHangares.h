@@ -1,6 +1,7 @@
 #ifndef LISTAHANGARES_H
 #define LISTAHANGARES_H
 #include "NodoHangares.h"
+#include "NodoVuelo.h"
 
 
 class ListaHangares
@@ -16,6 +17,7 @@ class ListaHangares
 
         void ingresar_dato(NodoHangares *asd);
         void mostrar_datos();
+        bool ingresar_vuelo(NodoVuelo *vuelo);
 
     protected:
 

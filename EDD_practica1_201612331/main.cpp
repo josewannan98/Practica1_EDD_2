@@ -33,12 +33,18 @@ using namespace std;
 
 void iniciandosimulacion();
 void iniciar();
+//crear unidades
 void crearunidad_simulacion();
+//iniciar variables
 void crear_hangares();
 void crear_Estaciones();
 void crear_Restaurante();
 void crear_salaEspera();
-void
+//primer proceso
+void entrada_principal();
+void a_hangar(NodoVuelo *vuelo);
+void entrada_secundaria();
+void a_estaciones(NodoEmpleados *empleado);
 
 
 
@@ -75,10 +81,11 @@ ListaHangares *lista_hangares = new ListaHangares();
 NodoRestaurantes *restaurante;
 Lista_restaurantes *listas_restaurantes = new Lista_restaurantes();
 
-
-
 NodoColumna_espera *filassalaespera;
 Lista_filaSalaEspera *filas = new Lista_filaSalaEspera();
+
+ColaEspera_Clientes *atencion = new ColaEspera_Clientes();
+
 
 int main()
 {
@@ -211,6 +218,7 @@ void crearunidad_simulacion()
         lista_vuelo->ingresar_datos(vuelo);
         lista_vuelo->id_actual++;
         lista_vuelo->mostrar_unidad(vuelo);
+        a_hangar(vuelo);
 
     }
     else
@@ -220,6 +228,7 @@ void crearunidad_simulacion()
         lista_empleado->ingresar_datos(empleado);
         lista_empleado->id_actual++;
         lista_empleado->mostrar_unidad(empleado);
+        a_estaciones(empleado);
 
     }
 }
@@ -277,4 +286,41 @@ void crear_salaEspera()
         filas->agregar_nodo(filassalaespera);
         filas->id_actual++;
     }
+}
+void entrada_principal()
+{
+
+}
+void a_hangar(NodoVuelo *vuelo)
+{
+    bool ingresando = lista_hangares->ingresar_vuelo(vuelo);
+    if(ingresando == true)
+    {
+        cout<<"\n El vuelo ["<<vuelo->nombre<<"] fue asignado a un hangar"<<endl;
+
+    }
+    else
+    {
+        cout<<"\n El vuelo ["<<vuelo->nombre<<"] no encontro hangar disponible y se retiro"<<endl;
+    }
+
+}
+void entrada_secundaria()
+{
+
+}
+void a_estaciones(NodoEmpleados *empleado)
+{
+
+    bool ingresando = lista_estacion->ingresando_empleado(empleado);
+    if(ingresando == true)
+    {
+        cout<<"\n El empleado ["<<empleado->nombre<<"] fue asignado a una estacion"<<endl;
+
+    }
+    else
+    {
+        cout<<"\n El empleado ["<<empleado->nombre<<"] no encontro estacion y decidio trabajar mañana"<<endl;
+    }
+
 }

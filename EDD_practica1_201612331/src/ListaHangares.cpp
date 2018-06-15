@@ -29,3 +29,22 @@ void ListaHangares::ingresar_dato(NodoHangares* nodo)
 
     }
 }
+bool ListaHangares::ingresar_vuelo(NodoVuelo *vuelo_)
+{
+    NodoHangares *pivote = this->primero;
+    bool tts = false;
+    while(pivote != nullptr)
+    {
+        if(pivote->ocupado == false)
+        {
+
+            pivote->ocupado = true;
+            pivote->vuelo = vuelo_;
+            tts = true;
+            break;
+
+        }
+        pivote = pivote->siguiente;
+    }
+    return tts;
+}

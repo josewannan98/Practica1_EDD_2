@@ -2,6 +2,9 @@
 #define NODOESTACION_H
 #include "NodoEmpleados.h"
 #include "ListaClientes.h"
+#include "ColaEspera_Clientes.h"
+#include "ColaEspera_Equipaje.h"
+#include "ColaEspera_Paqueteria.h"
 
 
 class NodoEstacion
@@ -19,10 +22,14 @@ class NodoEstacion
         string informacion;
 
         NodoEmpleados *empleado_acargo;
-        ListaClientes *clientes_encola;
+        NodoClientes *cliente_enatencion;
+        ColaEspera_Clientes *clientes_encola;
+        ColaEspera_Equipaje *equipaje_encola;
+        ColaEspera_Paqueteria *paqueteria_encola;
 
         bool Atencion_alCliente = false;
         bool seguridad_Cliente_inicio = false;
+        bool tiene_empleado = false;
 
 
     protected:
