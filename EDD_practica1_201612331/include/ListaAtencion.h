@@ -8,6 +8,8 @@ class ListaAtencion
         ListaAtencion();
         virtual ~ListaAtencion();
 
+
+
     protected:
 
     private:

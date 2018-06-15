@@ -16,7 +16,7 @@ void ColaEspera_Clientes::insertar_alinicio(NodoClientes *nodo)
 {
     NodoClientes *nuevo = nodo;
 
-    if(primero==nullptr)
+    if(this->primero == nullptr)
     {
         this->primero=nuevo;
         this->ultimo =nuevo;

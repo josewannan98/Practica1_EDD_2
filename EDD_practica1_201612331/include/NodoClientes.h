@@ -21,6 +21,7 @@ class NodoClientes
         string informacion;
         string genero;
         string ubicacion;
+        int tiempo_vuelo;
 
         NodoClientes *siguiente;
         NodoClientes *antetior;

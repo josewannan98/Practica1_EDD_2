@@ -41,9 +41,11 @@ void crear_Estaciones();
 void crear_Restaurante();
 void crear_salaEspera();
 //primer proceso
-void entrada_principal();
+void entrada_principal2(NodoClientes *cliente);
+void entrada_principal1(NodoClientes *cliente);
 void a_hangar(NodoVuelo *vuelo);
-void entrada_secundaria();
+void entrada_secundaria1(NodoEquipaje *equipaje);
+void entrada_secundaria2(NodoPaqueteria *paquete);
 void a_estaciones(NodoEmpleados *empleado);
 
 
@@ -81,13 +83,15 @@ ListaHangares *lista_hangares = new ListaHangares();
 NodoRestaurantes *restaurante;
 Lista_restaurantes *listas_restaurantes = new Lista_restaurantes();
 
-
-
 NodoColumna_espera *filassalaespera;
 Lista_filaSalaEspera *filas = new Lista_filaSalaEspera();
 
+ColaEspera_Clientes *atencion_ = new ColaEspera_Clientes();
+
+
 int main()
 {
+
        cout << "Hello world!" << endl;
 
 
@@ -191,6 +195,17 @@ void crearunidad_simulacion()
         lista_cliente->id_actual++;
         lista_cliente->mostrar_unidad(Clientes);
 
+        if(Clientes->tiene_boleto == true)
+        {
+            Clientes->esta_enseguridad = true;
+            entrada_principal2(Clientes);
+        }
+        else
+        {
+            Clientes->esta_enatencion = true;
+            entrada_principal1(Clientes);
+        }
+
     }
     else if(unidad == 2)
     {
@@ -199,6 +214,14 @@ void crearunidad_simulacion()
         lista_equipaje->agregar_datos(Equipaje);
         lista_equipaje->id_actual++;
         lista_equipaje->mostrar_unidad(Equipaje);
+        if(Equipaje->entrando==false)
+        {
+            entrada_secundaria1(Equipaje);
+        }
+        else
+        {
+             cout<<" \n El equipaje ["<<Equipaje->nombre<<"] se ha transportado desde el hangar"<<endl;
+        }
 
     }
     else if(unidad == 3)
@@ -208,6 +231,15 @@ void crearunidad_simulacion()
         lista_paqueteria->ingresar_dato(paquete);
         lista_paqueteria->id_actual++;
         lista_paqueteria->Mostrar_unidad(paquete);
+
+        if(paquete->entrando==false)
+        {
+            entrada_secundaria2(paquete);
+        }
+        else
+        {
+             cout<<" \n El paquete ["<<paquete->nombre<<"] se ha transportado desde el hangar"<<endl;
+        }
 
     }
     else if(unidad == 4)
@@ -265,6 +297,8 @@ void crear_Restaurante()
         listas_restaurantes->id_actual++;
 
     }
+    lista_estacion->restaurante = listas_restaurantes;
+
 }
 void crear_salaEspera()
 {
@@ -285,9 +319,43 @@ void crear_salaEspera()
         filas->agregar_nodo(filassalaespera);
         filas->id_actual++;
     }
+
+    lista_estacion->SalaEspera = filas;
 }
-void entrada_principal()
+void entrada_principal1(NodoClientes *atencion)
 {
+
+    bool entro  = lista_estacion->a_estacionAtencion(atencion);
+    if(entro == true)
+    {
+        cout<<"\n El Cliente ["<<atencion->nombre<<"] tuvo suerte \n encontro la estacion vacia y avanzo"<<endl;
+    }
+    else
+    {
+         cout<<"\n El Cliente ["<<atencion->nombre<<"] ingreso a la cola de Espera \n del Centro de Atencion"<<endl;
+
+         if(atencion->embarazada_==true || atencion->discapacitado_ ==true || atencion->terecera_edad==true)
+         {
+            atencion_->insertar_alinicio(atencion);
+            cout<<" Debido a su estado ["<<atencion->estado<<"] ingreso al inicio de la cola de Espera \n del Centro de Atencion"<<endl;
+         }
+         else
+         {
+            atencion_->insertar_normal(atencion);
+
+         }
+    }
+
+
+}
+void entrada_principal2(NodoClientes *seguridad)
+{
+    bool intros = lista_estacion->a_estacionSeguridad(seguridad);
+    if(intros==true)
+    {
+         cout<<"\n El Cliente ["<<seguridad->nombre<<"] ingreso a la estacion de seguridad"<<endl;
+    }
+
 
 }
 void a_hangar(NodoVuelo *vuelo)
@@ -304,8 +372,24 @@ void a_hangar(NodoVuelo *vuelo)
     }
 
 }
-void entrada_secundaria()
+void entrada_secundaria1(NodoEquipaje *equipaje)
 {
+    bool ingrea = lista_estacion->a_estacionSeguridad1(equipaje);
+    if(ingrea == true)
+    {
+        cout<<" \n El equipaje ["<<equipaje->nombre<<"] entro a la cola para revision"<<endl;
+
+    }
+
+}
+void entrada_secundaria2(NodoPaqueteria *paqueteria)
+{
+    bool ingrea = lista_estacion->a_estacionSeguridad2(paqueteria);
+    if(ingrea == true)
+    {
+        cout<<" \n El paquete ["<<paqueteria->nombre<<"] entro a la cola para revision"<<endl;
+
+    }
 
 }
 void a_estaciones(NodoEmpleados *empleado)
