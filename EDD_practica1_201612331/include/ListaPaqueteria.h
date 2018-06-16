@@ -19,6 +19,7 @@ class ListaPaqueteria
         void Mostrar_datos();
         void Mostrar_unidad(NodoPaqueteria *paqueterio);
 
+        int contar();
     protected:
 
     private:

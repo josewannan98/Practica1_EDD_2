@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string>
 
 #include "ListaClientes.h"
 #include "ClientesAleatorios.h"
@@ -50,6 +51,9 @@ void a_estaciones(NodoEmpleados *empleado);
 
 void actualizar_estaciones();
 void actualizar_colaEspera();
+void verificar_empleados();
+
+void historial();
 
 
 int iteraciones = 0;
@@ -126,12 +130,12 @@ int main()
            case 1:
                cout<<"\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n"<<endl;
                cout<<"Iniciando simulacion..."<<endl;
-               cout<<"-----------------------"<<endl;
+               cout<<"--------------------------------------------------------------------------------"<<endl;
                iniciandosimulacion();
             break;
            case 2:
                cout<<"   Creado por: Jose Wannan - 201612331 - Codeblocks"<<endl;
-               cout<<"-----------------------"<<endl;
+               cout<<"--------------------------------------------------------------------------------"<<endl;
 
                inciando = false;
             break;
@@ -180,12 +184,12 @@ atencion_ = new ColaEspera_Clientes();
     cin>>numero_columnas;
     cout<<" [6-2] Filas"<<endl;
     cin>>numero_filas;
-
+    cout<<"--------------------------------------------------------------------------------"<<endl;
      for (int n1 = 0; n1<5; n1++)
      {
          cout<<" \n "<<endl;
      }
-    cout<<" ---------------------------------------------- "<<endl;
+    cout<<"--------------------------------------------------------------------------------"<<endl;;
     cout<<" creando simulacion, Por favor Espere "<<endl;
 
     crear_hangares();
@@ -200,18 +204,27 @@ void iniciar()
 {
     for(int n=1; n<iteraciones+1;n++)
     {
-
-
-        cout<<" ############################################################# \n \n Iteracion No. "<<n<<"\n \n"<<endl;
+        cout<<"[Generando nueva iteracion]..."<<endl;
+        cout<<"\n \n \n \n "<<endl;
+        cout<<"[------------------------------------------------------------------------------]"<<endl;
+        cout<<"--------------------------------------------------------------------------------"<<endl;
+        cout<<" \n \n Iteracion No. "<<n<<"\n \n"<<endl;
         crearunidad_simulacion();
-        cout<<" ############################################################# \n \n "<<endl;
-        cout<<" En cola, "<<atencion_->cuantas_personas()<<" personas"<<endl;
+        cout<<"--------------------------------------------------------------------------------"<<endl;
 
-         actualizar_estaciones();
-         actualizar_colaEspera();
+        actualizar_colaEspera();
+        verificar_empleados();
+
+        actualizar_estaciones();
+        cout<<"[------------------------------------------------------------------------------]"<<endl;
 
 
     }
+        cout<<" \n \n \n \n \n \n \n \n"<<endl;
+        cout<<" Simulacion Finalizada "<<endl;
+        cout<<"--------------------------------------------------------------------------------"<<endl;
+        historial();
+        cout<<"--------------------------------------------------------------------------------"<<endl;
 }
 void crearunidad_simulacion()
 {
@@ -358,7 +371,7 @@ void entrada_principal1(NodoClientes *atencion)
     bool entro  = lista_estacion->a_estacionAtencion(atencion);
     if(entro == true)
     {
-        cout<<"\n El Cliente ["<<atencion->nombre<<"] tuvo suerte \n encontro la estacion vacia y avanzo"<<endl;
+        cout<<"..."<<endl;
     }
     else
     {
@@ -366,12 +379,17 @@ void entrada_principal1(NodoClientes *atencion)
 
          if(atencion->embarazada_==true || atencion->discapacitado_ ==true || atencion->terecera_edad==true)
          {
-            atencion_->insertar_alinicio(atencion);
+            lista_estacion->cola_espera_atencion->insertar_alinicio(atencion);
+            lista_estacion->cola_espera_atencion->id_actual++;
+            lista_estacion->cola_espera_atencion->actual++;
+
             cout<<" Debido a su estado ["<<atencion->estado<<"] ingreso al inicio de la cola de Espera \n del Centro de Atencion"<<endl;
          }
          else
          {
-            atencion_->insertar_normal(atencion);
+            lista_estacion->cola_espera_atencion->insertar_normal(atencion);
+            lista_estacion->cola_espera_atencion->id_actual++;
+            lista_estacion->cola_espera_atencion->actual++;
 
          }
     }
@@ -434,28 +452,69 @@ void a_estaciones(NodoEmpleados *empleado)
     }
     else
     {
-        cout<<"\n El empleado ["<<empleado->nombre<<"] no encontro estacion y decidio trabajar mañana"<<endl;
+    cout<<"\n El empleado ["<<empleado->nombre<<"] no encontro estacion y decidio trabajar mañana"<<endl;
+
+
     }
 
 }
 void actualizar_colaEspera()
 {
 
-         atencion_ = lista_estacion->cola_espera;
-    cout<<" \n La cola de Espera para Atencion, posee ahora - "<<atencion_->cuantas_personas()<<" personas"<<endl;
+
+        cout<<"--------------------------------------------------------------------------------"<<endl;
+        cout<<" \n La cola de Espera para Atencion, han pasado - "<<lista_estacion->cola_espera_atencion->id_actual<<" personas"<<endl;
+        cout<<"--------------------------------------------------------------------------------"<<endl;
 
 
 
 }
+void verificar_empleados()
+{
+    int empleado = lista_estacion->encontrar_empleadoslab();
+        cout<<"--------------------------------------------------------------------------------"<<endl;
+        cout<<" \n Existen - "<<empleado<<" empleados trabajando en las estaciones"<<endl;
+        cout<<"--------------------------------------------------------------------------------"<<endl;
+        cout<<" \n \n \n"<<endl;
+}
 void actualizar_estaciones()
 {
 
- cout<<" entrando a centro de atencion "<<endl;
+ cout<<" [entrando a centro de atencion]... "<<endl;
+ cout<<" \n "<<endl;
  lista_estacion->elimnar_atencion();
- cout<<" saliendo de centro de atencion "<<endl;
- lista_estacion->setnuevoColaEspera(atencion_);
- cout<<" entrando a seguridad "<<endl;
+  cout<<" \n "<<endl;
+ cout<<" [saliendo de centro de atencion]... "<<endl;
+
+
+
+ cout<<" [entrando a seguridad]... "<<endl;
+  cout<<" \n "<<endl;
  lista_estacion->eliminar_seguridad();
- cout<<" saliendo de seguridad "<<endl;
+ cout<<endl;
+ lista_estacion->eliminar_seguridad2();
+ cout<<endl;
+ lista_estacion->eliminar_seguridad3();
+ cout<<endl;
+ lista_estacion->actualizarestado_empleados();
+  cout<<" \n "<<endl;
+ cout<<" [saliendo de seguridad]... "<<endl;
+
+
+}
+void historial()
+{
+
+    cout<<" Se crearon un total de "<<lista_cliente->id_actual<<" Personas"<<endl;
+    cout<<" Se crearon un total de "<<lista_empleado->id_actual<<" Empleados"<<endl;
+    cout<<" Se crearon un total de "<<lista_equipaje->id_actual<<" Equipajes"<<endl;
+    cout<<" Se crearon un total de "<<lista_paqueteria->id_actual<<" Paquetes"<<endl;
+    cout<<" Se crearon un total de "<<lista_vuelo->id_actual<<" Vuelos"<<endl;
+
+    cout<<" Se crearon un total de "<<to_string(numero_hangares)<<" hangares"<<endl;
+    cout<<" Se crearon un total de "<<to_string(numero_restaurantes)<<" restaurantes"<<endl;
+    cout<<" Se crearon un total de "<<to_string(puestos_atencion)<<" Centros de Atencion"<<endl;
+    cout<<" Se crearon un total de "<<to_string(puestos_seguridad_inicio)<<" Centros de Seguridad"<<endl;
+
 
 }

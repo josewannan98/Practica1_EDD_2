@@ -22,6 +22,7 @@ class NodoEmpleados
         NodoEmpleados *anterior;
         NodoEmpleados *siguiente;
         bool en_puesto_trabajo = false;
+
         bool en_seguridad = false;
         bool en_atencion = false;
 

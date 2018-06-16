@@ -25,13 +25,10 @@ class NodoEstacion
 
         NodoClientes *cliente_enatencion; //atencion
 
-        ColaEspera_Clientes *clientes_encola = new ColaEspera_Clientes();   //seguridad
-        ColaEspera_Equipaje *equipaje_encola =  new ColaEspera_Equipaje();
-        ColaEspera_Paqueteria *paqueteria_encola = new ColaEspera_Paqueteria();
-
         bool Atencion_alCliente = false;
         bool seguridad_Cliente_inicio = false;
         bool tiene_empleado = false;
+        bool aunhayEq = false;
 
 
     protected:

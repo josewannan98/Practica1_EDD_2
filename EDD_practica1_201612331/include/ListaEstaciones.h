@@ -19,9 +19,14 @@ class ListaEstaciones
         Lista_filaSalaEspera *SalaEspera = new Lista_filaSalaEspera();
 
         ColaEspera_Clientes *cola_espera = new ColaEspera_Clientes();
+        ColaEspera_Equipaje *cola_equipaje = new ColaEspera_Equipaje();
+        ColaEspera_Paqueteria *cola_paqueteria = new ColaEspera_Paqueteria();
+
+        ColaEspera_Clientes *cola_espera_atencion = new ColaEspera_Clientes();
 
 
         int id_actual = 0;
+
 
         bool a_estacionAtencion(NodoClientes *cliente);//ya
 
@@ -31,18 +36,26 @@ class ListaEstaciones
 
         bool a_estacionSeguridad2(NodoPaqueteria *cliente);//ya
 
-        void elimnar_atencion();
-        void eliminar_atention(NodoEstacion *estacion);
 
-        NodoClientes* llamar_coladeEspera();
 
-        void setnuevoColaEspera(ColaEspera_Clientes *cola_clientes);
-        void enviar_aseguridad(NodoClientes *cliente);
+        void elimnar_atencion();//ya
+        void eliminar_atention(NodoEstacion *estacion);//ya
 
-        NodoClientes* traer_decolaseguridad(NodoEstacion *estacion);
+        NodoClientes* llamar_coladeEspera();//ya
+
+
+        void enviar_aseguridad(NodoClientes *cliente);//ya
+
+        NodoClientes* traer_decolaseguridad(NodoEstacion *estacion);//ya
+
+        void actualizarcolasEq(NodoEstacion *estacion);//ya
+
+        void actualizarcolasPa(NodoEstacion *estacion);//ya
 
 
         void eliminar_seguridad();//ya
+        void eliminar_seguridad2();//ya
+        void eliminar_seguridad3();
         void eliminar_segurida(NodoEstacion *estacion);//ya
 
         void enviar_arestaurantes(Lista_restaurantes *restaurante, NodoClientes *clientes);//ya
@@ -52,6 +65,14 @@ class ListaEstaciones
         void ingresar_estacion(NodoEstacion *estacion);//ya
         void mostrar_datos();//ya
         bool ingresando_empleado(NodoEmpleados *empleado);//ya
+
+
+        void actualizarestado_empleados();
+
+
+        //no se usan debido a bugs, pero ya no quiro borrarlos
+        int encontrar_empleadoslab();
+        int personas_cola();
 
     protected:
 

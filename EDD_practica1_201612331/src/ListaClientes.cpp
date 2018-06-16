@@ -59,9 +59,10 @@ void ListaClientes::mostrar_datos()
     while(pivote != nullptr)
     {
 
-         cout<<"---------------------------------------------------"<<endl;
-         cout<<" | "<<pivote->id<<" -  Nombre: "<<pivote->nombre<<"  \n | "<<pivote->id<<" -  Edad: "<< pivote->edad<<"  \n | "<<pivote->id<<" -  Genero: "<<pivote->genero<<"  \n | "<<pivote->id<<" -  Tipo de Cliente: "<<pivote->tipo_cliente<<" \n | "<<pivote->id<<" -  Estado: "<<pivote->estado<<endl;
-         cout<<"---------------------------------------------------"<<endl;
+
+         cout<<"-------------------------[Unidad de Simulacion]---------------------------------"<<endl;
+         cout<<"        | "<<pivote->id<<" -  Nombre: "<<pivote->nombre<<"  \n      | "<<pivote->id<<" -  Edad: "<< pivote->edad<<"  \n         | "<<pivote->id<<" -  Genero: "<<pivote->genero<<"  \n      | "<<pivote->id<<" -  Tipo de Cliente: "<<pivote->tipo_cliente<<" \n        | "<<pivote->id<<" -  Estado: "<<pivote->estado<<endl;
+         cout<<"--------------------------------------------------------------------------------"<<endl;
          pivote = pivote->siguiente;
 
     }
@@ -70,7 +71,21 @@ void ListaClientes::mostrar_unidad(NodoClientes *aux)
 {
     NodoClientes *pivote = aux;
 
-         cout<<"---------------------------------------------------"<<endl;
-         cout<<" | "<<pivote->id<<" -  Nombre: "<<pivote->nombre<<"  \n | "<<pivote->id<<" -  Edad: "<< pivote->edad<<"  \n | "<<pivote->id<<" -  Genero: "<<pivote->genero<<"  \n | "<<pivote->id<<" -  Tipo de Cliente: "<<pivote->tipo_cliente<<" \n | "<<pivote->id<<" -  Estado: "<<pivote->estado<<endl;
-         cout<<"---------------------------------------------------"<<endl;
+         cout<<"-------------------------[Unidad de Simulacion]---------------------------------"<<endl;
+         cout<<"\n   | "<<pivote->id<<" -  Nombre: "<<pivote->nombre<<"  \n   | "<<pivote->id<<" -  Edad: "<< pivote->edad<<"  \n   | "<<pivote->id<<" -  Genero: "<<pivote->genero<<"  \n   | "<<pivote->id<<" -  Tipo de Cliente: "<<pivote->tipo_cliente<<" \n   | "<<pivote->id<<" -  Estado: "<<pivote->estado<<"\n"<<endl;
+         cout<<"--------------------------------------------------------------------------------"<<endl;
+         pivote = pivote->siguiente;
+}
+int ListaClientes::contar()
+{
+   NodoClientes *pivote = this->primero;
+   int n =0 ;
+   while(pivote!=nullptr)
+   {
+       n++;
+       cout<<n<<endl;
+       pivote= pivote->siguiente;
+   }
+   return n;
+
 }

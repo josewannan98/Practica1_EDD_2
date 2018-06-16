@@ -16,6 +16,7 @@ class ListaVuelo
         void ingresar_datos(NodoVuelo *vuelo_);
         void mostrar_datos();
         void mostrar_unidad(NodoVuelo *vuelo);
+        int contar();
 
     protected:
 

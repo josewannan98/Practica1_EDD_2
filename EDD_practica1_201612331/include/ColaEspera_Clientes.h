@@ -10,7 +10,8 @@ class ColaEspera_Clientes
         virtual ~ColaEspera_Clientes();
         NodoClientes *primero;
         NodoClientes *ultimo;
-
+        int id_actual =0;
+        int actual = 0;
 
         void insertar_alinicio(NodoClientes *cliente);
         void insertar_normal(NodoClientes *cliente);

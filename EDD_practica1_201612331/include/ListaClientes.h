@@ -24,6 +24,8 @@ class ListaClientes
         void insertar_datos(NodoClientes *Nuevo);
         void mostrar_unidad(NodoClientes *nuevi);
 
+        int contar();
+
 
     protected:
 

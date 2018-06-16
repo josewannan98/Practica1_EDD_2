@@ -49,7 +49,18 @@ void ListaPaqueteria::Mostrar_unidad(NodoPaqueteria *aux)
 {
     NodoPaqueteria *pivote = aux;
 
-         cout<<"---------------------------------------------------"<<endl;
-         cout<<" | "<<pivote->id<<" -  Nombre: "<<pivote->nombre<<"  \n | "<<pivote->id<<" -  Tipo de Paquete: "<< pivote->tipo<<"  \n | "<<pivote->id<<" -  informacion: "<<pivote->informacion<<endl;
-         cout<<"---------------------------------------------------"<<endl;
+         cout<<"-------------------------[Unidad de Simulacion]---------------------------------"<<endl;
+         cout<<"\n   | "<<pivote->id<<" -  Nombre: "<<pivote->nombre<<"  \n   | "<<pivote->id<<" -  Tipo de Paquete: "<< pivote->tipo<<"  \n   | "<<pivote->id<<" -  informacion: "<<pivote->informacion<<"\n"<<endl;
+         cout<<"--------------------------------------------------------------------------------"<<endl;
+}
+int ListaPaqueteria::contar()
+{
+    NodoPaqueteria *pivote = this->primero;
+   int n =0 ;
+   while(pivote!=nullptr)
+   {
+       n++;
+       pivote= pivote->siguiente;
+   }
+   return n;
 }

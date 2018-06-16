@@ -74,9 +74,9 @@ void ColaEspera_Clientes::push_()
 
     if(a_eliminar!=nullptr)
     {
-        if(a_eliminar->antetior==nullptr)
+        if(a_eliminar->siguiente!=nullptr)
         {
-             cout<<"error aqui en push eliminar 1"<<endl;
+
              a_eliminar = a_eliminar->siguiente;
              a_eliminar->antetior = nullptr;
              this->primero = a_eliminar;
@@ -86,13 +86,12 @@ void ColaEspera_Clientes::push_()
         }
         else
         {
-            cout<<"error aqui en push eliminar 2"<<endl;
-
-            this->primero = nullptr;
-            delete aux;
-
-
-        }
+            if(a_eliminar->antetior==nullptr)
+            {
+                this->primero = nullptr;
+                delete aux;
+            }
+    }
 
     }
 

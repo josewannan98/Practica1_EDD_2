@@ -44,7 +44,20 @@ void ListaEmpleados::mostrar_datos()
 void ListaEmpleados::mostrar_unidad(NodoEmpleados *aux)
 {
     NodoEmpleados *pivote = aux;
-         cout<<"---------------------------------------------------"<<endl;
-         cout<<" | "<<pivote->id<<" -  Nombre: "<<pivote->nombre<<"  \n | "<<pivote->id<<" -  Genero: "<< pivote->genero<<"  \n | "<<pivote->id<<" -  Tipo de Empleado: "<<pivote->tipo_empleado<<"  \n | "<<pivote->id<<" -  Turnos de hoy: "<<pivote->turno<<endl;
-         cout<<"---------------------------------------------------"<<endl;
+         cout<<"-------------------------[Unidad de Simulacion]---------------------------------"<<endl;
+         cout<<"\n   | "<<pivote->id<<" -  Nombre: "<<pivote->nombre<<"  \n   | "<<pivote->id<<" -  Genero: "<< pivote->genero<<"  \n   | "<<pivote->id<<" -  Tipo de Empleado: "<<pivote->tipo_empleado<<"  \n   | "<<pivote->id<<" -  Turnos de hoy: "<<pivote->turno<<"\n"<<endl;
+         cout<<"--------------------------------------------------------------------------------"<<endl;
+}
+int ListaEmpleados::contar()
+{
+   NodoEmpleados *pivote = this->primero;
+   int n =0 ;
+
+   while(pivote!=nullptr)
+   {
+       n++;
+       pivote= pivote->siguiente;
+   }
+
+   return n;
 }
