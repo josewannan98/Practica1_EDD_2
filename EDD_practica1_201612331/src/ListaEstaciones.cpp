@@ -13,6 +13,14 @@ ListaEstaciones::ListaEstaciones()
 {
     this->primero = nullptr;
     this->ultimo = nullptr;
+    restaurante = new Lista_restaurantes();
+    SalaEspera = new Lista_filaSalaEspera();
+
+    cola_espera = new ColaEspera_Clientes();
+    cola_equipaje = new ColaEspera_Equipaje();
+    cola_paqueteria = new ColaEspera_Paqueteria();
+
+    cola_espera_atencion = new ColaEspera_Clientes();
     //ctor
 }
 
@@ -67,11 +75,14 @@ bool ListaEstaciones::ingresando_empleado(NodoEmpleados *empleado_)
     bool tts = false;
     do
     {
-        if(pivote->tiene_empleado == false)
+        if(pivote->tiene_empleado != true)
         {
+
             pivote->empleado_acargo = empleado_;
+
             pivote->tiene_empleado = true;
             tts = true;
+            cout<<"\n El Empleado "<<empleado_->nombre<<" ingreso a la Estacion "<<pivote->nombre<<endl;
             break;
         }
         pivote = pivote->siguiente;
@@ -88,6 +99,7 @@ bool ListaEstaciones::a_estacionAtencion(NodoClientes *cliente)
         {
             pivote->cliente_enatencion = cliente;
             tts = true;
+            cout<<"\n El Cliente ["<<cliente->nombre<<"] tuvo suerte \n encontro la estacion vacia y avanzo a \n la Estacion ->"<<pivote->nombre <<endl;
             break;
 
         }
@@ -97,221 +109,55 @@ bool ListaEstaciones::a_estacionAtencion(NodoClientes *cliente)
 }
 bool ListaEstaciones::a_estacionSeguridad(NodoClientes *cliente)
 {
-    NodoEstacion *pivote = this->primero;
+
     bool tts = false;
-    int random = 1 + rand() % (2-1);
-    int itera = 0;
 
-    do
+    if(cliente->embarazada_==true || cliente->discapacitado_==true || cliente->terecera_edad == true)
     {
-        if(pivote->seguridad_Cliente_inicio==true)
-        {
-                if(itera == random)
-                {
-                    if(pivote->cliente_enatencion!= nullptr)
-                    {
-                        if(cliente->embarazada_==true || cliente->discapacitado_ ==true || cliente->terecera_edad==true)
-                            {
-                                pivote->clientes_encola->insertar_alinicio(cliente);
-                                tts= true;
-                                break;
-
-                            }
-                            else
-                            {
-                                pivote->clientes_encola->insertar_normal(cliente);
-                                tts= true;
-                                break;
-
-
-                            }
-                    }
-                    else
-                    {
-                        pivote->cliente_enatencion = cliente;
-                        tts=true;
-                       break;
-                    }
-
-                    }
-
-                    itera++;
-                }
-
-
-     pivote = pivote->siguiente;
-    }while(pivote!=nullptr && pivote!=this->ultimo->siguiente);
-
-    if((itera<random || itera==random) && tts==false)
-    {
-        NodoEstacion *pivote1 = this->primero;
-
-       do
-    {
-        if(pivote->seguridad_Cliente_inicio==true)
-        {
-                if(itera == random)
-                {
-                    if(pivote->cliente_enatencion!= nullptr)
-                    {
-                        if(cliente->embarazada_==true || cliente->discapacitado_ ==true || cliente->terecera_edad==true)
-                            {
-                                pivote->clientes_encola->insertar_alinicio(cliente);
-                                tts= true;
-                                break;
-
-                            }
-                            else
-                            {
-                                pivote->clientes_encola->insertar_normal(cliente);
-                                tts= true;
-                                break;
-
-
-                            }
-                    }
-                    else
-                    {
-                        pivote->cliente_enatencion = cliente;
-                        tts=true;
-                       break;
-                    }
-
-                    }
-
-                    itera++;
-                }
-
-
-     pivote = pivote->siguiente;
-    }while(pivote!=nullptr && pivote!=this->ultimo->siguiente);
+        this->cola_espera->insertar_alinicio(cliente);
+        this->cola_espera->id_actual++;
+        return true;
     }
-
+    else
+    {
+        this->cola_espera->insertar_normal(cliente);
+        this->cola_espera->id_actual++;
+        return true;
+    }
  return tts;
 }
 bool ListaEstaciones::a_estacionSeguridad1(NodoEquipaje *equipaje)
 {
-    NodoEstacion *pivote = this->primero;
-    bool tts = false;
-    int random = 1 + rand() % (2-1);
-    int itera = 0;
-
-    do
-    {
-        if(pivote->seguridad_Cliente_inicio==true)
-        {
-                if(itera == random)
-                {
-                          pivote->equipaje_encola->insertar(equipaje);
-                          tts=true;
-                          break;
-                }
-                else
-                {
-
-                 itera++;
-                }
-
-        }
-     pivote = pivote->siguiente;
-    }while(pivote!=nullptr && pivote!=this->ultimo->siguiente);
-
-    if((itera<random || itera==random) && tts==false)
-    {
-        NodoEstacion *pivote1 = this->primero;
-
-        do
-    {
-        if(pivote->seguridad_Cliente_inicio==true)
-        {
-                if(itera == random)
-                {
-                          pivote->equipaje_encola->insertar(equipaje);
-                          tts= true;
-                          break;
-                }
-                else
-                {
-
-                 itera++;
-                }
-        }
-
-
-     pivote = pivote->siguiente;
-    }while(pivote!=nullptr && pivote!=this->ultimo->siguiente);
-
-    }
-    return tts;
+   this->cola_equipaje->insertar(equipaje);
+   this->cola_equipaje->id_actual++;
+   return true;
 }
 bool ListaEstaciones::a_estacionSeguridad2(NodoPaqueteria *paquete)
 {
-    NodoEstacion *pivote = this->primero;
-    bool tts = false;
-    int random = 1 + rand() % (2-1);
-    int itera = 0;
-
-    do
-    {
-        if(pivote->seguridad_Cliente_inicio==true)
-        {
-                if(itera == random)
-                {
-                          pivote->paqueteria_encola->insertar(paquete);
-                          tts = true;
-                          break;
-
-                }
-                else
-                {
-
-                 itera++;
-                }
-
-        }
-     pivote = pivote->siguiente;
-    }while(pivote!=nullptr && pivote!=this->ultimo->siguiente);
-
-    if((itera<random || itera==random) && tts==false)
-    {
-        NodoEstacion *pivote1 = this->primero;
-
-        do
-    {
-        if(pivote->seguridad_Cliente_inicio==true)
-        {
-                if(itera == random)
-                {
-                          pivote->paqueteria_encola->insertar(paquete);
-                          tts=true;
-                          break;
-                }
-                else
-                {
-
-                 itera++;
-                }
-        }
-
-
-     pivote = pivote->siguiente;
-    }while(pivote!=nullptr && pivote!=this->ultimo->siguiente);
-
-    }
-    return tts;
+    this->cola_paqueteria->insertar(paquete);
+    this->cola_paqueteria->id_actual++;
+    return true;
 
 }
+
+
+
+
+
+
 void ListaEstaciones::eliminar_seguridad()
 {
+
+    cout<<" Estacion Centro de Seguridad... "<<endl;
     NodoEstacion *pivote = this->primero;
 
     do
     {
         if(pivote->seguridad_Cliente_inicio == true && pivote->tiene_empleado == true && pivote->cliente_enatencion!=nullptr)
         {
-            if(pivote->clientes_encola->primero!=nullptr)
+            if(cola_espera->primero!=nullptr)
             {
-                cout<<"ss"<<endl;
+
                 eliminar_segurida(pivote);
             }
             else
@@ -321,29 +167,79 @@ void ListaEstaciones::eliminar_seguridad()
 
 
         }
-        else
-        {
-            cout<<"\n ------ Aun no ha pasado nada interesante en la estacion de seguridad ------"<<endl;
-        }
+
+
         pivote = pivote->siguiente;
 
     }while(pivote != nullptr && pivote!= ultimo->siguiente);
 }
+
+
+void ListaEstaciones::eliminar_seguridad2()
+{
+    cout<<" Centro de seguridad para Equipajes... "<<endl;
+    int random  = 1 + rand() % (3-1);
+    NodoEstacion *pivote = this->primero;
+    int n = 0;
+    do
+    {
+        n++;
+        if(n==random)
+        {
+            actualizarcolasEq(pivote);
+        }
+
+        pivote = pivote->siguiente;
+    }while(pivote!=nullptr && pivote!= this->ultimo->siguiente);
+
+}
+
+void ListaEstaciones::eliminar_seguridad3()
+{
+    cout<<" Centro de seguridad para Paquetes... "<<endl;
+    int random  = 1 + rand() % (3-1);
+    NodoEstacion *pivote = this->primero;
+    int n = 0;
+    do
+    {
+        n++;
+        if(n==random)
+        {
+            actualizarcolasPa(pivote);
+        }
+
+        pivote = pivote->siguiente;
+    }while(pivote!=nullptr && pivote!= this->ultimo->siguiente);
+}
+void ListaEstaciones::actualizarcolasPa(NodoEstacion *estacion)
+{
+    cout<<" Revisando Paquetes... "<<endl;
+    cola_paqueteria->push_(estacion->nombre);
+}
+void ListaEstaciones::actualizarcolasEq(NodoEstacion *estacion)
+{
+     cout<<" Revisando Equipajes... "<<endl;
+     cola_equipaje->push_(estacion->nombre);
+
+}
+
+
 void ListaEstaciones::eliminar_segurida(NodoEstacion* estacion)
 {
-    cout<<"en metodo segurida"<<endl;
+    cout<<" Estacion -> "<<estacion->nombre<<endl;
     NodoClientes *Envio = estacion->cliente_enatencion;
     estacion->cliente_enatencion = nullptr;
 
-    if(estacion->tiene_empleado==true)
+    if(estacion->tiene_empleado == true)
     {
-        cout<<"wass"<<endl;
+
         NodoClientes *cliente_traido = traer_decolaseguridad(estacion);
+
         if(cliente_traido!=nullptr)
         {
-         estacion->cliente_enatencion = cliente_traido;
+          estacion->cliente_enatencion = cliente_traido;
 
-        cout<<"\n El Cliente ["<<cliente_traido->nombre<<"] ingreso a una estacion de seguridad \n Estacion -> [ Estacion_"<<estacion->id<<"]"<<endl;
+          cout<<"\n El Cliente ["<<cliente_traido->nombre<<"] ingreso a una estacion de seguridad \n Estacion -> [ Estacion_"<<estacion->id<<"]"<<endl;
 
         }
         else
@@ -356,28 +252,30 @@ void ListaEstaciones::eliminar_segurida(NodoEstacion* estacion)
     }
     else
     {
-         cout<<"\n La Cola para avanzar a la estacion de seguridad No."<<estacion->id<<" esta vacia"<<endl;
+         cout<<"\n En la estacion de seguridad No."<<estacion->id<<" no hay un empleado atendiendo"<<endl;
     }
-/*
-    int random = 1 + rand() % (3-1);
+
+    int random = 1 + rand() % (2-0);
 
     if(random==1)
-    {
-        enviar_arestaurantes(this->restaurante, Envio);
-    }
-    else
     {
         enviar_aSalaEspera(this->SalaEspera, Envio);
 
     }
-*/
+    else
+    {
+        enviar_arestaurantes(this->restaurante, Envio);
+
+    }
+
 }
 NodoClientes* ListaEstaciones::traer_decolaseguridad(NodoEstacion *estacion)
 {
-    NodoClientes *envio = estacion->clientes_encola->enviar_siguiente();
-    estacion->clientes_encola->push_();
+    NodoClientes *envio = cola_espera->enviar_siguiente();
+    cola_espera->push_();
     return envio;
 }
+
 void ListaEstaciones::enviar_arestaurantes(Lista_restaurantes *restaurante, NodoClientes *clientes)
 {
     Lista_restaurantes *lista_aux = restaurante;
@@ -391,8 +289,13 @@ void ListaEstaciones::enviar_arestaurantes(Lista_restaurantes *restaurante, Nodo
           int kkl = 1 + rand() % (15-5);
           clientes->tiempo_vuelo = kkl;
           pivote->cliente->insertar_alinicio(clientes);
-          cout<<" El Cliente ["<<clientes->nombre<<"] ingreso al restaurante ["<<pivote->id<<"] "<<endl;
+          cout<<" El Cliente ["<<clientes->nombre<<"] ingreso al restaurante [ Restaurante_"<<pivote->id<<"] "<<endl;
+          pivote->capacidad--;
           break;
+        }
+        else
+        {
+            cout<<" Ya no hay espacio en el Restaurante resturante_"<<pivote->id<<endl;
         }
         pivote = pivote->siguiente;
     }
@@ -400,6 +303,7 @@ void ListaEstaciones::enviar_arestaurantes(Lista_restaurantes *restaurante, Nodo
 void ListaEstaciones::enviar_aSalaEspera(Lista_filaSalaEspera *sala, NodoClientes *clientes)
 {
     Lista_filaSalaEspera *pivote1 = sala;
+    bool entra = true;
 
     NodoColumna_espera *pivote = pivote1->primero;
     while(pivote!=nullptr)
@@ -408,12 +312,14 @@ void ListaEstaciones::enviar_aSalaEspera(Lista_filaSalaEspera *sala, NodoCliente
 
         do
         {
-            if(pivote2->ocupado==false)
+            if(pivote2->ocupado == false && entra == true)
             {
                 int kkl = 1 + rand() % (15-5);
                 clientes->tiempo_vuelo = kkl;
                 pivote2->cola_clientes = clientes;
-                cout<<" El Cliente ["<<clientes->nombre<<"] ingreso a la sala de espera ["<<pivote->id<<" Fila # "<<pivote2->id<<" Columna #] "<<endl;
+                cout<<" El Cliente ["<<clientes->nombre<<"] ingreso a la sala de espera \n Lugar [$[ Fila: "<<pivote->id<<"] - [ Columna :"<<pivote2->id<<"] $] "<<endl;
+                pivote2->ocupado=true;
+                entra = false;
                 break;
             }
 
@@ -426,6 +332,8 @@ void ListaEstaciones::enviar_aSalaEspera(Lista_filaSalaEspera *sala, NodoCliente
 }
 void ListaEstaciones::elimnar_atencion()
 {
+    cout<<" Estacion Centros de Atencion... "<<endl;
+
     NodoEstacion *pivote = this->primero;
     if(pivote!=nullptr)
     {
@@ -433,14 +341,11 @@ void ListaEstaciones::elimnar_atencion()
         {
             if(pivote->Atencion_alCliente==true && pivote->tiene_empleado == true && pivote->cliente_enatencion!=nullptr)
             {
-                cout<<"sld"<<endl;
+
                 eliminar_atention(pivote);
 
             }
-            else
-            {
-                cout<<"\n --- Aun no ha pasado nada interesante en la estacion de Atencion al Cliente ---"<<endl;
-            }
+
             pivote = pivote->siguiente;
 
         }while(pivote!=nullptr && pivote!=this->ultimo->siguiente);
@@ -449,9 +354,10 @@ void ListaEstaciones::elimnar_atencion()
 }
 void ListaEstaciones::eliminar_atention(NodoEstacion *estacion)
 {
+    cout<<" Estacion -> "<<estacion->nombre<<endl;
     NodoClientes *clienteaMover = estacion->cliente_enatencion;
     estacion->cliente_enatencion = nullptr;
-    if(cola_espera->cuantas_personas()>0)
+    if(cola_espera_atencion->actual>0)
     {
         NodoClientes *cliente_traido = llamar_coladeEspera();
         estacion->cliente_enatencion = cliente_traido;
@@ -470,18 +376,27 @@ void ListaEstaciones::eliminar_atention(NodoEstacion *estacion)
     }
     else
     {
-        cout<<"\n La Cola par avanzar a centro de atencion esta Vacia"<<endl;
+        cout<<"\n La Cola para avanzar a centro de atencion esta Vacia"<<endl;
+        bool ingre = a_estacionSeguridad(clienteaMover);
+         if(ingre == true)
+         {
+             cout<<"\n El Cliente ["<<clienteaMover->nombre<<"] ingreso a la estacion de seguridad \n Estacion -> [ Estacion_"<<estacion->id<<"]"<<endl;
+
+         }
+         else
+         {
+             cout<<"\n El Cliente ["<<clienteaMover->nombre<<"] decidio ya no viajar y se retiro del aeropuerto"<<endl;
+
+         }
 
     }
-
-
 
 }
 
 NodoClientes* ListaEstaciones::llamar_coladeEspera()
 {
-    NodoClientes *a_llamar = cola_espera->primero;
-    NodoClientes *envio = cola_espera->primero;
+    NodoClientes *a_llamar = cola_espera_atencion->primero;
+    NodoClientes *envio = cola_espera_atencion->primero;
 
 if(a_llamar!=nullptr)
 {
@@ -489,7 +404,8 @@ if(a_llamar!=nullptr)
     {
         NodoClientes *nuevo_primero = a_llamar->siguiente;
         nuevo_primero->antetior = nullptr;
-        cola_espera->primero = nuevo_primero;
+        cola_espera_atencion->primero = nuevo_primero;
+        cola_espera_atencion->actual--;
         delete a_llamar;
     }
     else
@@ -502,10 +418,7 @@ if(a_llamar!=nullptr)
     return envio;
 
 }
-void ListaEstaciones::setnuevoColaEspera(ColaEspera_Clientes *cola_clientes)
-{
-    this->cola_espera = cola_clientes;
-}
+
 void ListaEstaciones::enviar_aseguridad(NodoClientes *cliente)
 {
 
@@ -523,9 +436,9 @@ void ListaEstaciones::enviar_aseguridad(NodoClientes *cliente)
 
     }while(pivote != nullptr && pivote!= ultimo->siguiente);
 
-    estacion->cliente_enatencion = estacion->clientes_encola->primero;
+    estacion->cliente_enatencion = cola_espera->primero;
 
-    NodoClientes *NodoEliminar = estacion->clientes_encola->primero;
+    NodoClientes *NodoEliminar = cola_espera->primero;
     NodoClientes *Envio = NodoEliminar;
 
     if(NodoEliminar->siguiente!=nullptr)
@@ -533,7 +446,7 @@ void ListaEstaciones::enviar_aseguridad(NodoClientes *cliente)
         NodoClientes *aux = NodoEliminar;
         NodoEliminar = NodoEliminar->siguiente;
         NodoEliminar->antetior = nullptr;
-        estacion->clientes_encola->primero = NodoEliminar;
+        cola_espera->primero = NodoEliminar;
 
         delete aux;
 
@@ -541,11 +454,63 @@ void ListaEstaciones::enviar_aseguridad(NodoClientes *cliente)
     else
     {
 
-        delete estacion->clientes_encola->primero;
-        estacion->clientes_encola->primero = nullptr;
+        delete cola_espera->primero;
+        cola_espera->primero = nullptr;
 
     }
-    estacion->clientes_encola->insertar_normal(cliente);
+    cola_espera->insertar_normal(cliente);
     cout<<"\n El Cliente ["<<cliente->nombre<<"] ingreso a la estacion de seguridad_["<<estacion->id<<"]"<<endl;
 
+}
+
+void ListaEstaciones::actualizarestado_empleados()
+{
+    cout<<" Preguntando el estado de animo de los empleados... "<<endl;
+    cout<<" Preguntandoles cuando finalizan su turno... \n "<<endl;
+    NodoEstacion *pivote = this->primero;
+
+    do
+    {
+        if(pivote->tiene_empleado==true)
+        {
+            pivote->empleado_acargo->turno--;
+            if(pivote->empleado_acargo->turno<1)
+            {
+                cout<<" El empleado ["<<pivote->empleado_acargo->nombre<<"] termino su turno y decidio \n irse a descansar, debido a que estaba demasiado cansado. \n"<<endl;
+                pivote->empleado_acargo = nullptr;
+                pivote->tiene_empleado = false;
+            }
+        }
+    }while(pivote!=nullptr && pivote!=this->ultimo->siguiente);
+
+    cout<<" Retirandose de las estaciones... \n"<<endl;
+}
+
+//ya no se usan -presentaban bugs-
+int ListaEstaciones::encontrar_empleadoslab()
+{
+    NodoEstacion *pivote = this->primero;
+    int empleado= 0;
+    do
+    {
+        if(pivote->tiene_empleado==true)
+        {
+            empleado++;
+
+        }
+        pivote = pivote->siguiente;
+
+    }while(pivote!=nullptr && pivote!= this->ultimo->siguiente);
+return empleado;
+}
+int ListaEstaciones::personas_cola()
+{
+    NodoClientes *pivote = cola_espera_atencion->primero;
+    int n=0;
+    while(pivote!=nullptr)
+    {
+        n++;
+        pivote = pivote->siguiente;
+    }
+    return n;
 }

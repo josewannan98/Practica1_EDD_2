@@ -9,8 +9,9 @@ class ColaEspera_Paqueteria
         virtual ~ColaEspera_Paqueteria();
         NodoPaqueteria *primero;
         NodoPaqueteria *ultimo;
-
+        int id_actual = 0;
         void insertar(NodoPaqueteria *equipaje);
+        void push_(string estacion);
 
     protected:
 

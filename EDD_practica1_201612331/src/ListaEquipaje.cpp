@@ -49,7 +49,18 @@ void ListaEquipaje::mostrar_unidad(NodoEquipaje *nodo)
 
     NodoEquipaje *pivote = nodo;
 
-         cout<<"---------------------------------------------------"<<endl;
-         cout<<" | "<<pivote->id<<" -  Nombre: "<<pivote->nombre<<"  \n | "<<pivote->id<<" -  Tipo de Equipaje: "<< pivote->tipo<<"  \n | "<<pivote->id<<" -  informacion: "<<pivote->informacion<<endl;
-         cout<<"---------------------------------------------------"<<endl;
+         cout<<"-------------------------[Unidad de Simulacion]---------------------------------"<<endl;
+         cout<<"\n   | "<<pivote->id<<" -  Nombre: "<<pivote->nombre<<"  \n   | "<<pivote->id<<" -  Tipo de Equipaje: "<< pivote->tipo<<"  \n   | "<<pivote->id<<" -  informacion: "<<pivote->informacion<<"\n"<<endl;
+         cout<<"--------------------------------------------------------------------------------"<<endl;
+}
+int ListaEquipaje::contar()
+{
+    NodoEquipaje *pivote = this->primero;
+   int n =0 ;
+   while(pivote!=nullptr)
+   {
+       n++;
+       pivote= pivote->siguiente;
+   }
+   return n;
 }

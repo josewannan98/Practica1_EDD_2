@@ -44,9 +44,9 @@ void ListaVuelo::mostrar_datos()
     while(pivote != nullptr)
     {
 
-        cout<<"---------------------------------------------------"<<endl;
-        cout<<" | "<<pivote->id<<" - Nombre Vuelo: "<<pivote->nombre<<"\n | "<<pivote->id<<" - Cantidad Pasajeros: "<< pivote->pasajeros<<"\n | "<<pivote->id<<" - Cantidad Equipaje: "<<pivote->equipaje<<"\n | "<<pivote->id<< " - Cantidad Paquetes: "<<pivote->paqueteria<<" \n | "<<pivote->id<<" - informacion: "<<pivote->informacion<<endl;
-        cout<<"---------------------------------------------------"<<endl;
+        cout<<"-------------------------[Unidad de Simulacion]---------------------------------"<<endl;
+        cout<<"\n    | "<<pivote->id<<" - Nombre Vuelo: "<<pivote->nombre<<"\n    | "<<pivote->id<<" - Cantidad Pasajeros: "<< pivote->pasajeros<<"\n    | "<<pivote->id<<" - Cantidad Equipaje: "<<pivote->equipaje<<"\n    | "<<pivote->id<< " - Cantidad Paquetes: "<<pivote->paqueteria<<" \n    | "<<pivote->id<<" - informacion: "<<pivote->informacion<<"\n"<<endl;
+        cout<<"--------------------------------------------------------------------------------"<<endl;
 
         pivote = pivote->siguiente;
     }
@@ -59,4 +59,15 @@ void ListaVuelo::mostrar_unidad(NodoVuelo *aux)
         cout<<" | "<<pivote->id<<" - Nombre Vuelo: "<<pivote->nombre<<"\n | "<<pivote->id<<" - Cantidad Pasajeros: "<< pivote->pasajeros<<"\n | "<<pivote->id<<" - Cantidad Equipaje: "<<pivote->equipaje<<"\n | "<<pivote->id<< " - Cantidad Paquetes: "<<pivote->paqueteria<<" \n | "<<pivote->id<<" - informacion: "<<pivote->informacion<<endl;
         cout<<"---------------------------------------------------"<<endl;
 
+}
+int ListaVuelo::contar()
+{
+    NodoVuelo *pivote = this->primero;
+   int n =0 ;
+   while(pivote!=nullptr)
+   {
+       n++;
+       pivote= pivote->siguiente;
+   }
+   return n;
 }

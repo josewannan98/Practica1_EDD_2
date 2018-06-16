@@ -17,6 +17,8 @@ class ListaEmpleados
         void mostrar_datos();
         void mostrar_unidad(NodoEmpleados *empleado);
 
+        int contar();
+
     protected:
 
     private:
