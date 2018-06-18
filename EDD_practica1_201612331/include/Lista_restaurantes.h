@@ -16,6 +16,8 @@ class Lista_restaurantes
         void ingresar_restaurante(NodoRestaurantes *nodo);
         int personas_aqui();
 
+        void enviar_aavion();
+
 
     protected:
 

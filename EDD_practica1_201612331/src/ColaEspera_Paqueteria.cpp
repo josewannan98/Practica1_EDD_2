@@ -33,16 +33,18 @@ void ColaEspera_Paqueteria::push_(string estacion)
 {
     cout<<" eliminando... \n"<<endl;
 
-       if(this->primero!=nullptr)
+    NodoPaqueteria *temp = this->primero;
+     NodoPaqueteria *aux = temp;
+       if(temp!=nullptr)
         {
-           if(this->primero->siguiente!=nullptr)
+           if(temp->anterior == nullptr && temp->siguiente!=nullptr )
            {
              cout<<" El Paquete ["<<this->primero->nombre<<"] paso a ser revisado y,";
-             NodoPaqueteria *temp = this->primero;
-             NodoPaqueteria *aux = temp->siguiente;
-             aux->anterior = nullptr;
-             this->primero = aux;
-             delete temp;
+             temp = temp->siguiente;
+             temp->anterior = nullptr;
+             this->primero = temp;
+
+             delete aux;
              cout<<"\n Salio de la estacion ["<<estacion<<"] y se retiro del aeropuerto \n en un vuelo comercial"<<endl;
            }
            else

@@ -18,9 +18,8 @@ class NodoVuelo
         int id;
         string nombre;
         string informacion;
-        ListaClientes *clientes_envuelo;
-        ListaPaqueteria *paqueteria_envuelo;
-        ListaEquipaje *equipaje_envuelo;
+        ListaClientes *clientes_envuelo = new ListaClientes();
+
         int pasajeros;
         int equipaje;
         int paqueteria;

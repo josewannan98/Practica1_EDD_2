@@ -40,3 +40,4 @@ int Lista_restaurantes::personas_aqui()
     }
     return personas;
 }
+

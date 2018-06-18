@@ -19,6 +19,8 @@ class ListaHangares
         void mostrar_datos();
         bool ingresar_vuelo(NodoVuelo *vuelo);
 
+        void push_(NodoVuelo *vuelo);
+
     protected:
 
     private:

@@ -12,7 +12,8 @@ class NodoRestaurantes
         NodoRestaurantes *anterior;
         NodoRestaurantes *siguiente;
         int id;
-        ColaEspera_Clientes *cliente;
+        int id_actual = 0;
+        ColaEspera_Clientes *cliente = new ColaEspera_Clientes();
         int capacidad = 0;
         bool restaurante_lleno = false;
 

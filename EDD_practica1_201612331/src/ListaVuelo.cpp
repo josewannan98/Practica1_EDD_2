@@ -29,10 +29,9 @@ void ListaVuelo::ingresar_datos(NodoVuelo *nuevo_vuelo)
     else
     {
 
-        NodoVuelo *temp = nuevo;
-        temp->siguiente = this->primero;
-        temp->siguiente->anterior = temp;
-        this->primero = temp;
+        this->ultimo->siguiente =nuevo;
+        nuevo->anterior = this->ultimo;
+        this->ultimo = nuevo;
 
     }
 

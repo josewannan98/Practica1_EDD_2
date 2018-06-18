@@ -14,6 +14,7 @@ ListaHangares::~ListaHangares()
 void ListaHangares::ingresar_dato(NodoHangares* nodo)
 {
     NodoHangares *nuevo = nodo;
+
     nuevo->id = this->id_actual;
     if(this->primero==nullptr)
     {
@@ -47,4 +48,28 @@ bool ListaHangares::ingresar_vuelo(NodoVuelo *vuelo_)
         pivote = pivote->siguiente;
     }
     return tts;
+}
+void ListaHangares::push_(NodoVuelo *vuelo)
+{
+     NodoHangares *Lista = this->primero;
+     if(Lista!=nullptr)
+     {
+         NodoHangares *aux;
+
+         while((Lista!=nullptr)&& Lista->vuelo!=vuelo)
+         {
+            Lista = Lista->siguiente;
+         }
+         if(Lista->vuelo==vuelo)
+         {
+             cout<<" El Vuelo "<<Lista->vuelo->nombre<<" ha salido del hangar "<<Lista->nombre<<endl;
+             cout<<" El Vuelo poseia "<<Lista->vuelo->clientes_envuelo->id_actual<<" clientes en el \n"<<endl;
+             Lista->vuelo = nullptr;
+             Lista->ocupado = false;
+         }
+     }
+     else
+     {
+         cout<<" No hay Vuelos por Despegar "<<endl;
+     }
 }

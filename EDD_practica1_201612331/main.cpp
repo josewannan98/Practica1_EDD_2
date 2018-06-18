@@ -29,6 +29,7 @@
 #include "Lista_SalaEspera.h"
 #include "Lista_filaSalaEspera.h"
 #include "NodoSalaEspera.h"
+#include "creacionGrafos.h"
 
 using namespace std;
 
@@ -41,6 +42,7 @@ void crear_hangares();
 void crear_Estaciones();
 void crear_Restaurante();
 void crear_salaEspera();
+void menuReportes(int itera);
 //primer proceso
 void entrada_principal2(NodoClientes *cliente);
 void entrada_principal1(NodoClientes *cliente);
@@ -54,6 +56,7 @@ void actualizar_colaEspera();
 void verificar_empleados();
 
 void historial();
+void GrafoGeneral();
 
 
 int iteraciones = 0;
@@ -64,6 +67,7 @@ int numero_restaurantes = 0;
 int numero_columnas = 0;
 int numero_filas = 0;
 
+creacionGrafos *grafos = new creacionGrafos();
 
 NodoClientes *Clientes;
 ListaClientes *lista_cliente = new ListaClientes();
@@ -94,6 +98,14 @@ Lista_filaSalaEspera *filas = new Lista_filaSalaEspera();
 
 ColaEspera_Clientes *atencion_ = new ColaEspera_Clientes();
 
+void grafoVu();
+void grafoGra();
+void grafoCli();
+
+
+string hh= "";
+int iteracion_totaes= 0;
+
 int main()
 {
 
@@ -118,7 +130,7 @@ int main()
         bool inciando = true;
        while(inciando ==true)
        {
-
+           cout<<"   Creado por: Jose Wannan - 201612331 - Codeblocks"<<endl;
            cout<<"---------------------------------[MENU]-----------------------------------------"<<endl;
            cout<<" [1] - Iniciar Simulacion                                           {presione 1}"<<endl;
            cout<<" [2] - Salir                                                        {presione 2}"<<endl;
@@ -129,7 +141,10 @@ int main()
            {
            case 1:
                cout<<"\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n"<<endl;
-               cout<<"Iniciando simulacion..."<<endl;
+               cout<<"--------------------------------------------------------------------------------"<<endl;
+               cout<<" Iniciando simulacion..."<<endl;
+               cout<<"--------------------------------------------------------------------------------"<<endl;
+               cout<<"   Creado por: Jose Wannan - 201612331 - Codeblocks"<<endl;
                cout<<"--------------------------------------------------------------------------------"<<endl;
                iniciandosimulacion();
             break;
@@ -143,6 +158,60 @@ int main()
        }
 
     return 0;
+}
+void menuReportes(int iteracion_actual)
+{
+    cout<<"\n \n "<<endl;
+        bool inciando = true;
+        if(iteracion_actual<2) inciando = false;
+       while(inciando ==true)
+       {
+
+
+           cout<<"---------------------------------[REPORTES]-------------------------------------"<<endl;
+           cout<<" [1] - Sistema de Simulación                                        {presione 1}"<<endl;
+           cout<<" [2] - Historial Unidades de Simulacion                             {presione 2}"<<endl;
+           cout<<" [3] - Historial de Clientes                                        {presione 3}"<<endl;
+           cout<<" [4] - Historial de vuelos                                          {presione 4}"<<endl;
+           cout<<"--------------------------------------------------------------------------------"<<endl;
+           int opcion;
+           cin>>opcion;
+           switch(opcion)
+           {
+           case 1:
+
+
+               cout<<"--------------------------------------------------------------------------------"<<endl;
+               GrafoGeneral();
+                 cout<<"--------------------------------------------------------------------------------"<<endl;
+               inciando = false;
+            break;
+           case 2:
+
+
+               cout<<"--------------------------------------------------------------------------------"<<endl;
+               grafoGra();
+                 cout<<"--------------------------------------------------------------------------------"<<endl;
+                 inciando = false;
+            break;
+            case 3:
+
+
+               cout<<"--------------------------------------------------------------------------------"<<endl;
+               grafoCli();
+                 cout<<"--------------------------------------------------------------------------------"<<endl;
+                 inciando = false;
+            break;
+            case 4:
+
+
+               cout<<"--------------------------------------------------------------------------------"<<endl;
+               grafoVu();
+                 cout<<"--------------------------------------------------------------------------------"<<endl;
+                 inciando = false;
+            break;
+           }
+       }
 }
 
 void iniciandosimulacion()
@@ -178,7 +247,7 @@ atencion_ = new ColaEspera_Clientes();
     cout<<" [4] - Ingrese el numero de Hangares  que poseera  el aeropuerto "<<endl;
     cin>>numero_hangares;
     cout<<" [5] - Ingrese el numero de restaurantes  que poseera  el aeropuerto "<<endl;
-    cin>>numero_hangares;
+    cin>>numero_restaurantes;
     cout<<" [6] - Ingrese el numero de sillas que poseeran las salas de esperas "<<endl;
     cout<<" [6-1] Columnas"<<endl;
     cin>>numero_columnas;
@@ -200,10 +269,12 @@ atencion_ = new ColaEspera_Clientes();
 
 
 }
+
 void iniciar()
 {
     for(int n=1; n<iteraciones+1;n++)
     {
+
         cout<<"[Generando nueva iteracion]..."<<endl;
         cout<<"\n \n \n \n "<<endl;
         cout<<"[------------------------------------------------------------------------------]"<<endl;
@@ -212,11 +283,18 @@ void iniciar()
         crearunidad_simulacion();
         cout<<"--------------------------------------------------------------------------------"<<endl;
 
-        actualizar_colaEspera();
-        verificar_empleados();
+        if(n>1)
+        {
+             actualizar_colaEspera();
+             verificar_empleados();
 
-        actualizar_estaciones();
+             actualizar_estaciones();
+        }
+
         cout<<"[------------------------------------------------------------------------------]"<<endl;
+
+
+        menuReportes(n);
 
 
     }
@@ -224,7 +302,36 @@ void iniciar()
         cout<<" Simulacion Finalizada "<<endl;
         cout<<"--------------------------------------------------------------------------------"<<endl;
         historial();
+
         cout<<"--------------------------------------------------------------------------------"<<endl;
+}
+void GrafoGeneral()
+{
+    grafos = new creacionGrafos();
+    grafos->lista_estaciones = lista_estacion;
+    grafos->generardot();
+}
+void grafoCli()
+{
+    grafos = new creacionGrafos();
+    grafos->listacien = lista_cliente;
+    grafos->generardotClientes();
+}
+void grafoGra()
+{
+    grafos = new creacionGrafos();
+    grafos->listacien = lista_cliente;
+    grafos->listaemp = lista_empleado;
+    grafos->listaeq = lista_equipaje;
+    grafos->listavuel = lista_vuelo;
+    grafos->listapaq = lista_paqueteria;
+    grafos->generardotSimulaciones();
+}
+void grafoVu()
+{
+    grafos = new creacionGrafos();
+    grafos->listavuel = lista_vuelo;
+    grafos->generardotVuelos();
 }
 void crearunidad_simulacion()
 {
@@ -314,6 +421,7 @@ void crear_hangares()
         lista_hangares->ingresar_dato(hangar);
         lista_hangares->id_actual++;
     }
+    lista_estacion->hangares = lista_hangares;
 }
 void crear_Estaciones()
 {
@@ -330,6 +438,7 @@ void crear_Estaciones()
         lista_estacion->id_actual++;
     }
 }
+
 void crear_Restaurante()
 {
     for(int n=1; n<(numero_restaurantes+1);n++)
@@ -403,12 +512,35 @@ void entrada_principal2(NodoClientes *seguridad)
     {
          cout<<"\n El Cliente ["<<seguridad->nombre<<"] ingreso a la estacion de seguridad"<<endl;
     }
+    else
+      {
+         cout<<"\n El Cliente ["<<seguridad->nombre<<"] ingreso a la cola de Espera \n del Centro de Seguridad"<<endl;
+
+         if(seguridad->embarazada_==true || seguridad->discapacitado_ ==true || seguridad->terecera_edad==true)
+         {
+            lista_estacion->cola_espera->insertar_alinicio(seguridad);
+            lista_estacion->cola_espera->id_actual++;
+            lista_estacion->cola_espera->actual++;
+
+            cout<<" Debido a su estado ["<<seguridad->estado<<"] ingreso al inicio de la cola de Espera \n del Centro de Seguridad"<<endl;
+         }
+         else
+         {
+            lista_estacion->cola_espera->insertar_normal(seguridad);
+            lista_estacion->cola_espera->id_actual++;
+            lista_estacion->cola_espera->actual++;
+
+         }
+    }
+
 
 
 }
+
+//-
 void a_hangar(NodoVuelo *vuelo)
 {
-    bool ingresando = lista_hangares->ingresar_vuelo(vuelo);
+    bool ingresando = lista_estacion->hangares->ingresar_vuelo(vuelo);
     if(ingresando == true)
     {
         cout<<"\n El vuelo ["<<vuelo->nombre<<"] fue asignado a un hangar"<<endl;
@@ -465,13 +597,17 @@ void actualizar_colaEspera()
         cout<<"--------------------------------------------------------------------------------"<<endl;
         cout<<" \n La cola de Espera para Atencion, han pasado - "<<lista_estacion->cola_espera_atencion->id_actual<<" personas"<<endl;
         cout<<"--------------------------------------------------------------------------------"<<endl;
+        cout<<"--------------------------------------------------------------------------------"<<endl;
+        cout<<" \n La cola de Espera para seguridad, han pasado - "<<lista_estacion->cola_espera->id_actual<<" personas"<<endl;
+        cout<<"--------------------------------------------------------------------------------"<<endl;
+
 
 
 
 }
 void verificar_empleados()
 {
-    int empleado = lista_estacion->encontrar_empleadoslab();
+    int empleado = lista_estacion->encontrarempleados();
         cout<<"--------------------------------------------------------------------------------"<<endl;
         cout<<" \n Existen - "<<empleado<<" empleados trabajando en las estaciones"<<endl;
         cout<<"--------------------------------------------------------------------------------"<<endl;
@@ -480,41 +616,43 @@ void verificar_empleados()
 void actualizar_estaciones()
 {
 
- cout<<" [entrando a centro de atencion]... "<<endl;
- cout<<" \n "<<endl;
- lista_estacion->elimnar_atencion();
-  cout<<" \n "<<endl;
- cout<<" [saliendo de centro de atencion]... "<<endl;
-
-
-
- cout<<" [entrando a seguridad]... "<<endl;
-  cout<<" \n "<<endl;
- lista_estacion->eliminar_seguridad();
+ cout<<" INGRESO A ESTACIONES DE ATENCION... \n \n"<<endl;
+ lista_estacion->actualizarestacionAtencion();
+ lista_estacion->adquirirestado_atencion();
+ cout<<"\n \n SALIENDO DE ESTACIONES DE ATENCION... \n\n"<<endl;
+ cout<<" INGRESO A ESTACIONES DE SEGURIDAD... \n \n"<<endl;
+ lista_estacion->actualizarestacionSeguridad();
+ lista_estacion->adquirirestado_seguridad();
  cout<<endl;
  lista_estacion->eliminar_seguridad2();
  cout<<endl;
  lista_estacion->eliminar_seguridad3();
- cout<<endl;
- lista_estacion->actualizarestado_empleados();
-  cout<<" \n "<<endl;
- cout<<" [saliendo de seguridad]... "<<endl;
-
+ cout<<"\n \n SALIENDO DE ESTACIONES DE SEGURIDAD... \n\n"<<endl;
+ cout<<" INGRESO A RESTAURANTES... \n \n"<<endl;
+ lista_estacion->reducir_enRestaurantes();
+ cout<<"\n \n  SALIENDO DE RESTAURANTES... \n \n"<<endl;
+ cout<<" INGRESO A SALA DE ESPERA... \n \n"<<endl;
+ lista_estacion->reducir_salasdeEspera();
+ cout<<"\n \n SALIENDO DE SALA DE ESPERA... \n \n"<<endl;
 
 }
 void historial()
 {
 
+
     cout<<" Se crearon un total de "<<lista_cliente->id_actual<<" Personas"<<endl;
     cout<<" Se crearon un total de "<<lista_empleado->id_actual<<" Empleados"<<endl;
     cout<<" Se crearon un total de "<<lista_equipaje->id_actual<<" Equipajes"<<endl;
     cout<<" Se crearon un total de "<<lista_paqueteria->id_actual<<" Paquetes"<<endl;
-    cout<<" Se crearon un total de "<<lista_vuelo->id_actual<<" Vuelos"<<endl;
+    cout<<" Se crearon un total de "<<lista_vuelo->id_actual<<" Vuelos \n"<<endl;
+    cout<<" Un total de "<<lista_estacion->perdieron_suvuelodeRestaurantes<<" perdieron su vuelo - Restaurantes"<<endl;
+    cout<<" Un total de "<<lista_estacion->perdieron_suvuelodeSaladeEspera<<" perdieron su vuelo - Sala de Espera"<<endl;
 
-    cout<<" Se crearon un total de "<<to_string(numero_hangares)<<" hangares"<<endl;
-    cout<<" Se crearon un total de "<<to_string(numero_restaurantes)<<" restaurantes"<<endl;
-    cout<<" Se crearon un total de "<<to_string(puestos_atencion)<<" Centros de Atencion"<<endl;
-    cout<<" Se crearon un total de "<<to_string(puestos_seguridad_inicio)<<" Centros de Seguridad"<<endl;
+    cout<<" Entraron "<<lista_estacion->pesonasRestau<<" personas a los restaurantes"<<endl;
+
+    cout<<" Entraron "<<lista_estacion->personas_ensalaespera<<" personas a la Sala de Espera"<<endl;
+    cout<<" Un total de "<<lista_estacion->personas_salieronalAvion<<" abordaron su vuelo"<<endl;
+    cout<<" Un total de "<<lista_estacion->aviones_despegaron<<" vuelos salieron del aeropuerto"<<endl;
 
 
 }

@@ -59,6 +59,7 @@
 		<Unit filename="include/NodoRestaurantes.h" />
 		<Unit filename="include/NodoSalaEspera.h" />
 		<Unit filename="include/NodoVuelo.h" />
+		<Unit filename="include/creacionGrafos.h" />
 		<Unit filename="include/empleadosAleatorios.h" />
 		<Unit filename="include/equipajeAleatorio.h" />
 		<Unit filename="include/paqueteriaAleatoria.h" />
@@ -89,6 +90,7 @@
 		<Unit filename="src/NodoRestaurantes.cpp" />
 		<Unit filename="src/NodoSalaEspera.cpp" />
 		<Unit filename="src/NodoVuelo.cpp" />
+		<Unit filename="src/creacionGrafos.cpp" />
 		<Unit filename="src/empleadosAleatorios.cpp" />
 		<Unit filename="src/equipajeAleatorio.cpp" />
 		<Unit filename="src/paqueteriaAleatoria.cpp" />

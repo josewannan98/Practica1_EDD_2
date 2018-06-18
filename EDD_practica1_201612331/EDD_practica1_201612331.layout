@@ -2,189 +2,9 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="src/NodoRestaurantes.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include/ColaEspera_Equipaje.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="99" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src/ListaEstaciones.cpp" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="-3" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="8304" topLine="222" />
-		</Cursor>
-		<Folding>
-			<Collapse line="12" />
-			<Collapse line="19" />
-			<Collapse line="43" />
-			<Collapse line="64" />
-			<Collapse line="192" />
-			<Collapse line="247" />
-			<Collapse line="386" />
-			<Collapse line="405" />
-		</Folding>
-	</File>
-	<File name="include/ListaEstaciones.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="993" topLine="29" />
-		</Cursor>
-	</File>
-	<File name="src/ListaClientes.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1040" topLine="38" />
-		</Cursor>
-	</File>
-	<File name="include/ListaAtencion.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="4" />
-		</Cursor>
-	</File>
-	<File name="src/ListaEmpleados.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="749" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include/ClientesAleatorios.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="241" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src/ClientesAleatorios.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="33" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src/NodoPaqueteria.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="556" topLine="15" />
-		</Cursor>
-	</File>
-	<File name="src/equipajeAleatorio.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1164" topLine="48" />
-		</Cursor>
-	</File>
-	<File name="src/ListaEquipaje.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1144" topLine="40" />
-		</Cursor>
-	</File>
-	<File name="include/NodoVuelo.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="427" topLine="15" />
-		</Cursor>
-	</File>
-	<File name="src/Lista_restaurantes.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="346" topLine="8" />
-		</Cursor>
-	</File>
-	<File name="include/NodoEquipaje.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="172" topLine="16" />
-		</Cursor>
-	</File>
-	<File name="src/ColaEspera_Clientes.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1161" topLine="45" />
-		</Cursor>
-	</File>
-	<File name="src/ListaVuelo.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="539" topLine="6" />
-		</Cursor>
-	</File>
-	<File name="include/ListaEquipaje.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="385" topLine="6" />
-		</Cursor>
-	</File>
-	<File name="src/paqueteriaAleatoria.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1016" topLine="40" />
-		</Cursor>
-	</File>
-	<File name="include/NodoRestaurantes.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="86" topLine="9" />
-		</Cursor>
-	</File>
-	<File name="include/ListaClientes.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="683" topLine="20" />
-		</Cursor>
-	</File>
-	<File name="include/ColaEspera_Clientes.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="402" topLine="6" />
-		</Cursor>
-	</File>
-	<File name="src/Lista_filaSalaEspera.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="803" topLine="32" />
-		</Cursor>
-	</File>
-	<File name="src/empleadosAleatorios.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1032" topLine="43" />
-		</Cursor>
-	</File>
-	<File name="include/NodoEstacion.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="200" topLine="21" />
-		</Cursor>
-	</File>
-	<File name="src/vuelosAleatorios.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="390" topLine="31" />
-		</Cursor>
-	</File>
-	<File name="include/NodoEmpleados.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="104" topLine="21" />
-		</Cursor>
-	</File>
-	<File name="src/NodoEmpleados.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="426" topLine="16" />
-		</Cursor>
-	</File>
-	<File name="include/ListaHangares.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="96" topLine="15" />
-		</Cursor>
-	</File>
-	<File name="include/NodoPaqueteria.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="283" topLine="11" />
-		</Cursor>
-	</File>
-	<File name="src/ListaPaqueteria.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="560" topLine="17" />
-		</Cursor>
-	</File>
-	<File name="include/ListaPaqueteria.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="419" topLine="15" />
-		</Cursor>
-	</File>
-	<File name="src/NodoClientes.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1552" topLine="34" />
-		</Cursor>
-	</File>
-	<File name="src/ListaHangares.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="738" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include/ListaEmpleados.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="402" topLine="12" />
-		</Cursor>
-	</File>
-	<File name="src/Lista_SalaEspera.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="322" topLine="9" />
+			<Cursor1 position="285" topLine="6" />
 		</Cursor>
 	</File>
 	<File name="src/NodoSalaEspera.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -192,45 +12,14 @@
 			<Cursor1 position="93" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="include/Lista_restaurantes.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include/ListaVuelo.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="0" topLine="3" />
-		</Cursor>
-	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="11301" topLine="316" />
-		</Cursor>
-		<Folding>
-			<Collapse line="296" />
-			<Collapse line="320" />
-			<Collapse line="333" />
-			<Collapse line="355" />
-			<Collapse line="381" />
-			<Collapse line="391" />
-			<Collapse line="405" />
-			<Collapse line="415" />
-			<Collapse line="425" />
-		</Folding>
-	</File>
-	<File name="include/ColaEspera_Equipaje.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="306" topLine="3" />
-		</Cursor>
-	</File>
-	<File name="include/Lista_filaSalaEspera.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="123" topLine="12" />
+			<Cursor1 position="289" topLine="6" />
 		</Cursor>
 	</File>
 	<File name="src/ColaEspera_Paqueteria.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="520" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src/NodoEstacion.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="367" topLine="12" />
+			<Cursor1 position="1297" topLine="36" />
 		</Cursor>
 	</File>
 	<File name="include/NodoColumna_espera.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -240,7 +29,47 @@
 	</File>
 	<File name="src/NodoEquipaje.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="547" topLine="8" />
+			<Cursor1 position="566" topLine="21" />
+		</Cursor>
+	</File>
+	<File name="src/Lista_restaurantes.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="838" topLine="28" />
+		</Cursor>
+	</File>
+	<File name="src/Lista_SalaEspera.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="322" topLine="9" />
+		</Cursor>
+	</File>
+	<File name="include/NodoEmpleados.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="580" topLine="13" />
+		</Cursor>
+	</File>
+	<File name="include/NodoVuelo.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="427" topLine="15" />
+		</Cursor>
+	</File>
+	<File name="src/ClientesAleatorios.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="33" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src/ColaEspera_Clientes.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="-4" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1333" topLine="59" />
+		</Cursor>
+	</File>
+	<File name="src/NodoEstacion.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="367" topLine="12" />
+		</Cursor>
+	</File>
+	<File name="include/ListaEquipaje.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="407" topLine="7" />
 		</Cursor>
 	</File>
 	<File name="include/empleadosAleatorios.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -253,9 +82,49 @@
 			<Cursor1 position="81" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="include/NodoSalaEspera.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src/paqueteriaAleatoria.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="258" topLine="6" />
+			<Cursor1 position="1016" topLine="40" />
+		</Cursor>
+	</File>
+	<File name="src/ListaPaqueteria.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1662" topLine="47" />
+		</Cursor>
+	</File>
+	<File name="src/empleadosAleatorios.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1032" topLine="43" />
+		</Cursor>
+	</File>
+	<File name="include/NodoPaqueteria.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="283" topLine="11" />
+		</Cursor>
+	</File>
+	<File name="include/ColaEspera_Paqueteria.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="242" topLine="3" />
+		</Cursor>
+	</File>
+	<File name="src/NodoClientes.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1552" topLine="34" />
+		</Cursor>
+	</File>
+	<File name="src/ListaHangares.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="738" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include/ListaPaqueteria.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="442" topLine="15" />
+		</Cursor>
+	</File>
+	<File name="src/ListaEquipaje.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1620" topLine="52" />
 		</Cursor>
 	</File>
 	<File name="include/NodoClientes.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -263,29 +132,172 @@
 			<Cursor1 position="728" topLine="15" />
 		</Cursor>
 	</File>
-	<File name="include/Lista_SalaEspera.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src/ListaClientes.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="0" topLine="6" />
+			<Cursor1 position="2648" topLine="73" />
 		</Cursor>
 	</File>
-	<File name="include/ListaVuelo.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include/Lista_restaurantes.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="356" topLine="12" />
+			<Cursor1 position="413" topLine="13" />
 		</Cursor>
 	</File>
-	<File name="src/ColaEspera_Equipaje.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src/ListaVuelo.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="485" topLine="0" />
+			<Cursor1 position="577" topLine="0" />
 		</Cursor>
+	</File>
+	<File name="src/NodoRestaurantes.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="99" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src/equipajeAleatorio.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1164" topLine="48" />
+		</Cursor>
+	</File>
+	<File name="include/NodoHangares.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="328" topLine="12" />
+		</Cursor>
+	</File>
+	<File name="include/creacionGrafos.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2389" topLine="33" />
+		</Cursor>
+	</File>
+	<File name="src/ListaEstaciones.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="14947" topLine="450" />
+		</Cursor>
+		<Folding>
+			<Collapse line="12" />
+			<Collapse line="27" />
+			<Collapse line="31" />
+			<Collapse line="51" />
+		</Folding>
 	</File>
 	<File name="src/NodoVuelo.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="663" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="include/NodoHangares.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include/NodoSalaEspera.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="328" topLine="12" />
+			<Cursor1 position="258" topLine="6" />
+		</Cursor>
+	</File>
+	<File name="include/NodoRestaurantes.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="86" topLine="6" />
+		</Cursor>
+	</File>
+	<File name="include/ListaClientes.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="696" topLine="20" />
+		</Cursor>
+	</File>
+	<File name="include/ListaAtencion.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="4" />
+		</Cursor>
+	</File>
+	<File name="include/NodoEquipaje.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="172" topLine="15" />
+		</Cursor>
+	</File>
+	<File name="src/Lista_filaSalaEspera.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="803" topLine="32" />
+		</Cursor>
+	</File>
+	<File name="main.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="12107" topLine="326" />
+		</Cursor>
+		<Folding>
+			<Collapse line="211" />
+		</Folding>
+	</File>
+	<File name="include/ListaHangares.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="96" topLine="15" />
+		</Cursor>
+	</File>
+	<File name="src/NodoEmpleados.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="426" topLine="3" />
+		</Cursor>
+	</File>
+	<File name="include/Lista_filaSalaEspera.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="123" topLine="12" />
+		</Cursor>
+	</File>
+	<File name="src/creacionGrafos.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="13779" topLine="424" />
+		</Cursor>
+	</File>
+	<File name="include/ListaEmpleados.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="415" topLine="12" />
+		</Cursor>
+	</File>
+	<File name="src/vuelosAleatorios.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="390" topLine="31" />
+		</Cursor>
+	</File>
+	<File name="src/ListaEmpleados.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1781" topLine="3" />
+		</Cursor>
+		<Folding>
+			<Collapse line="14" />
+			<Collapse line="32" />
+			<Collapse line="44" />
+			<Collapse line="51" />
+		</Folding>
+	</File>
+	<File name="include/ColaEspera_Clientes.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="309" topLine="6" />
+		</Cursor>
+	</File>
+	<File name="include/Lista_SalaEspera.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="6" />
+		</Cursor>
+	</File>
+	<File name="include/ListaEstaciones.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1140" topLine="28" />
+		</Cursor>
+	</File>
+	<File name="src/NodoPaqueteria.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="556" topLine="15" />
+		</Cursor>
+	</File>
+	<File name="src/ColaEspera_Equipaje.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="-3" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1681" topLine="32" />
+		</Cursor>
+		<Folding>
+			<Collapse line="16" />
+		</Folding>
+	</File>
+	<File name="include/NodoEstacion.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="589" topLine="15" />
+		</Cursor>
+	</File>
+	<File name="include/ClientesAleatorios.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="241" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>
